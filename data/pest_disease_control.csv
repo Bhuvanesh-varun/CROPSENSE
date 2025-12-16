@@ -1,0 +1,8 @@
+Symptom,Condition,Control_Type,Recommended_Product,Dose_per_Acre,Interval_Days,PHI_Days
+Holes in leaves,Caterpillar/Bollworm,Insecticide (IRAC 28),Coragen/Delegate,60ml,41913,14
+Sticky leaves,Aphid/Whitefly,Insecticide (IRAC 4A),Imidacloprid 17.8SL,50ml,46001,7
+Yellow Streaks+Curl,Thrips/Leaf Miner,Insecticide (IRAC 5/23),Spinosad/Emamectin,80ml,46001,10
+Brown leaf spots,Fungal Leaf Spot,Fungicide (FRAC M3),Mancozeb/Copper Oxy,2-3g/L,45937,7
+White powder,Powdery Mildew,Fungicide (FRAC 3),Hexaconazole/Difenoconazole,300ml,42339,10
+Black mold,Sooty Mold (Honeydew),Wash + Neem Oil,Neem Oil/Azadirachtin,2-3ml/L,42278,0
+Preventive,No visible infection,Bio-safe Route,Neem + Trichoderma,2ml/L,42278,0

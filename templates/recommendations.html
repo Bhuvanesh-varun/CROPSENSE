@@ -1,0 +1,377 @@
+{% extends "base.html" %}
+
+{% block title %}Our AI{% endblock %}
+
+{% block content %}
+
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+<div class="modal fade" id="loginErrorModal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content p-3">
+      <div class="modal-header">
+        <h5 class="modal-title text-danger fw-bold">Login Failed</h5>
+        <button class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <p>{{ messages[0] }}</p>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+{% endif %}
+{% endwith %}
+
+<!-- ===================== HERO / HOME ===================== -->
+<section id="aiMainContent" class="hero-section position-relative overflow-hidden">
+
+  <!-- PARTICLES CANVAS -->
+  <div id="particles-bg" class="particles-bg"></div>
+
+  <!-- CONTENT -->
+  <div class="container position-relative z-2 text-center text-white">
+
+    <h1 class="display-3 fw-extrabold mb-4 letter-spacing-lg">
+      <span class="text-success">PREDICT PROTECT PRODUCE</span>
+    </h1>
+
+    <p class="lead text-light mb-4">
+      Cultivating the Future with AI-Powered Agriculture <br>
+      Smart Crop Diagnosis, Soil Analysis, and Precision recommendation system.
+    </p>
+
+    {% set runs_left = (current_user.quota.total - current_user.quota.used) if current_user and current_user.quota else
+    None %}
+
+    <button id="openFormBtn" class="btn btn-success btn-lg px-5 py-3 rounded-pill fw-semibold shadow
+         {% if runs_left is not none and runs_left <= 0 %}disabled{% endif %}" {% if runs_left is not none and
+      runs_left <=0 %}disabled{% endif %}>
+      🌱 Analyze My Crop
+    </button>
+
+    {% if runs_left is not none %}
+    {% if runs_left > 0 %}
+    <small class="text-success d-block mt-2">
+      ✅ {{ runs_left }} AI run{{ 's' if runs_left != 1 }} remaining
+    </small>
+    {% else %}
+    <div class="mt-3">
+      <a href="{{ url_for('plans') }}" class="btn btn-outline-success btn-sm">
+        Upgrade Plan
+      </a>
+    </div>
+    {% endif %}
+    {% endif %}
+
+
+
+
+
+  </div>
+</section>
+
+<!-- <div class="container my-5" data-aos="fade-up">
+
+    
+      <div class="col-md-6">
+        <div class="card rounded-4">
+          <video class="rounded-4" controls>
+            <source src="{{ url_for('static', filename='assets/help.mp4') }}" type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+
+    
+  </div>
+</div> -->
+
+<!-- ===================== AI FORM ===================== -->
+{% include "ai_form.html" %}
+
+<!-- ===================== RESULTS ===================== -->
+<div id="recommendationResultsArea" class="container my-5 d-none" data-aos="fade-up">
+
+
+
+  <div class="card shadow-sm border-0 rounded-4 mb-4">
+    <div class="card-body text-center">
+      <h3 class="fw-bold text-success mb-1">
+        <i class="bi bi-stars me-2"></i>
+        Your Custom AI Recommendation
+      </h3>
+    </div>
+  </div>
+
+
+
+  <div class="alert alert-warning text-center small mb-4">
+    ⚠️ <strong>Disclaimer:</strong>
+    AI recommendations are advisory and may not be 100% accurate.
+    Always consult an agronomist before applying treatments.
+  </div>
+
+
+
+  <div class="row">
+
+    <!-- SUMMARY -->
+    <div class="col-md-5">
+      <div class="card p-4 shadow rounded-4">
+        <h5 class="fw-bold">
+          <i class="bi bi-list-check me-2"></i>
+          Summary of Inputs
+        </h5>
+        <div id="inputSummary" class="bg-light p-3 rounded"></div>
+      </div>
+    </div>
+
+    <!-- OUTPUT -->
+    <div class="col-md-7">
+      <div class="card shadow-lg rounded-4 border-0 h-100">
+
+        <div class="card-header bg-white border-0">
+          <h4 class="fw-bold text-success mb-1">
+            <i class="bi bi-clipboard-data me-2"></i>
+            Diagnostic Summary
+          </h4>
+          <p class="text-muted small">
+            AI-powered soil & crop health analysis
+          </p>
+        </div>
+
+        <div class="card-body">
+
+          <!-- ================= KPI CARDS ================= -->
+          <div id="kpiSection" class="row g-3 mb-4 d-none">
+
+            <div class="col-md-6">
+              <div class="kpi-card">
+                <div class="kpi-title">Soil Quality Index</div>
+                <div class="kpi-value" id="sqiValue">—</div>
+                <div class="kpi-badge" id="sqiClass">—</div>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="kpi-card">
+                <div class="kpi-title">Crop Health Index</div>
+                <div class="kpi-value" id="phiValue">—</div>
+                <div class="kpi-badge" id="phiClass">—</div>
+              </div>
+            </div>
+
+          </div>
+          <!-- ================= END KPI CARDS ================= -->
+
+          <!-- 🔄 LOADING STATE -->
+          <div id="aiLoadingState" class="text-center py-5">
+
+            <div class="spinner-border text-success mb-3" style="width:3rem;height:3rem"></div>
+
+            <h5 class="fw-bold text-success">
+              Analyzing your crop & soil
+            </h5>
+
+            <p class="text-muted small">
+              Running AI models and generating recommendations…
+            </p>
+
+          </div>
+
+          <!-- ✅ FINAL RESULT -->
+          <div id="planHtmlContainer" class="bg-light p-4 rounded-4 shadow-sm d-none" style="line-height:1.7">
+          </div>
+
+        </div>
+
+        <div class="card-footer bg-white border-0 text-end small text-muted">
+          <i class="bi bi-shield-check text-success me-1"></i>
+          Generated by CropSense AI
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="text-center mt-4 d-flex justify-content-center gap-3 flex-wrap">
+    <button class="btn btn-outline-secondary" id="goBackBtn">
+      ← Go Back
+    </button>
+    <button class="btn btn-outline-success" id="startNewAnalysisBtn">
+      Start New Analysis
+    </button>
+    <button class="btn btn-outline-success" id="downloadReportBtn">
+      Download Report
+    </button>
+  </div>
+
+</div>
+
+<!-- ===================== LOGIN MODAL ===================== -->
+<div class="modal fade" id="loginRequiredModal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content auth-gate-modal border-0 rounded-4">
+
+      <div class="auth-gate-header text-center p-4">
+        <div class="auth-icon mb-2">
+          <i class="bi bi-lock-fill"></i>
+        </div>
+        <h4 class="fw-bold mb-1">Login Required</h4>
+        <p class="small opacity-75">Secure access to AI insights</p>
+      </div>
+
+      <div class="modal-body text-center">
+        <p class="text-muted">
+          Please login or create an account to continue using our
+          <strong>CropSense AI Recommendation System</strong>.
+        </p>
+      </div>
+
+      <div class="modal-footer border-0 justify-content-center">
+        <button class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
+        <a href="{{ url_for('login') }}" class="btn btn-success">Login / Sign up</a>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+{% endblock %}
+
+{% block body_extra %}
+
+<!-- tsParticles core -->
+<script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+
+    const tryBtn = document.getElementById("openFormBtn");
+    const intro = document.getElementById("aiMainContent");
+    const form = document.getElementById("aiFormOverlay");
+
+    if (!tryBtn || !intro || !form) return;
+
+    tryBtn.addEventListener("click", function () {
+
+      if (!window.IS_LOGGED_IN) {
+        new bootstrap.Modal(
+          document.getElementById("loginRequiredModal")
+        ).show();
+        return;
+      }
+
+      intro.classList.add("d-none");
+      form.classList.remove("d-none");
+
+      form.scrollIntoView({ behavior: "smooth" });
+    });
+
+  });
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+<script>
+  AOS.init();
+</script>
+
+<!-- Particles JS -->
+
+<script>
+  tsParticles.load("particles-bg", {
+    background: { color: "#244A3A" },
+    fpsLimit: 60,
+    interactivity: {
+      events: {
+        onHover: { enable: true, mode: "grab" },
+        resize: true
+      },
+      modes: {
+        grab: {
+          distance: 180,
+          links: { opacity: 0.6 }
+        }
+      }
+    },
+    particles: {
+      color: { value: "#7dd957" },
+      links: {
+        color: "#7dd957",
+        distance: 150,
+        enable: true,
+        opacity: 0.25,
+        width: 1
+      },
+      move: {
+        enable: true,
+        speed: 1.2,
+        outModes: { default: "out" }
+      },
+      number: {
+        density: { enable: true, area: 800 },
+        value: 70
+      },
+      opacity: { value: 0.4 },
+      shape: { type: "circle" },
+      size: { value: { min: 1, max: 3 } }
+    },
+    detectRetina: true
+  });
+</script>
+
+
+<script>
+  // ✅ RESET TO FRESH OUR AI PAGE
+  function resetToFreshAI() {
+    const hero = document.getElementById("aiMainContent");
+    const form = document.getElementById("aiFormOverlay");
+    const results = document.getElementById("recommendationResultsArea");
+
+    if (hero) hero.classList.remove("d-none");
+    if (form) form.classList.add("d-none");
+    if (results) results.classList.add("d-none");
+
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const goBackBtn = document.getElementById("goBackBtn");
+    if (goBackBtn) {
+      goBackBtn.addEventListener("click", resetToFreshAI);
+    }
+  });
+</script>
+
+<script>
+  // ✅ Handle fresh AI mode (?fresh=1)
+  document.addEventListener("DOMContentLoaded", function () {
+    const params = new URLSearchParams(window.location.search);
+    const isFresh = params.get("fresh") === "1";
+
+    if (!isFresh) return;
+
+    const hero = document.getElementById("aiMainContent");
+    const form = document.getElementById("aiFormOverlay");
+    const results = document.getElementById("recommendationResultsArea");
+
+    if (hero) hero.classList.remove("d-none");
+    if (form) form.classList.add("d-none");
+    if (results) results.classList.add("d-none");
+
+    // Clean URL (remove ?fresh=1 after reset)
+    window.history.replaceState({}, document.title, "/recommendations");
+
+    window.scrollTo({ top: 0, behavior: "instant" });
+  });
+</script>
+
+
+
+{% endblock %}

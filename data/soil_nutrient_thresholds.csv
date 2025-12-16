@@ -1,0 +1,13 @@
+Nutrient,Ideal_Min,Ideal_Max,Mild_Deficiency_Limit,Severe_Deficiency_Limit,Notes
+Soil_pH,6.0,7.5,5.8,5.5,Adjust with lime or gypsum
+EC_dS_m,0.2,1.5,1.6,2.0,High EC causes salinity toxicity
+Organic_Carbon_Percent,0.5,1.0,0.4,0.3,Affects soil fertility
+N_kg_ha,120.0,180.0,100.0,70.0,Key for vegetative growth
+P_kg_ha,40.0,70.0,30.0,20.0,Root & energy growth
+K_kg_ha,150.0,250.0,120.0,90.0,Disease resistance and grain filling
+S_kg_ha,15.0,30.0,12.0,8.0,Protein and sulphur metabolism
+Zn_ppm,1.0,2.5,0.8,0.5,Very common deficiency in India
+Fe_ppm,4.5,10.0,4.2,3.5,Important for chlorophyll
+B_ppm,0.5,1.0,0.4,0.2,Overdose toxic — handle with care
+Mn_ppm,6.0,20.0,5.0,3.0,Micronutrient balance
+Cu_ppm,0.5,1.0,0.4,0.25,Enzyme activation and hormones

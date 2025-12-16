@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+
+<style>
+.auth-card {
+  max-width: 420px;
+  margin: 90px auto;
+  padding: 32px;
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+}
+</style>
+
+<div class="auth-card">
+  <h3 class="fw-bold text-center mb-4">Login to CropSense</h3>
+
+  <form id="loginForm">
+    <div class="mb-3">
+      <label class="fw-semibold">Email</label>
+      <input type="email" id="loginEmail" class="form-control" required>
+    </div>
+
+    <div class="mb-3">
+      <label class="fw-semibold">Password</label>
+      <input type="password" id="loginPassword" class="form-control" required>
+    </div>
+
+    <button type="submit" class="btn btn-success w-100">
+      Login
+    </button>
+  </form>
+
+  <p class="text-center mt-3">
+    Don’t have an account?
+    <a href="{{ url_for('signup') }}">Sign Up</a>
+  </p>
+</div>
+
+<!-- ================= FIREBASE AUTH ================= -->
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+
+<script>
+  firebase.initializeApp({
+    apiKey: "AIzaSyAe9f_L_1pQGeAxUw4RCYWTQDb8ewK-NtM",
+    authDomain: "cropsense-a15e4.firebaseapp.com",
+    projectId: "cropsense-a15e4",
+    storageBucket: "cropsense-a15e4.firebasestorage.app",
+    messagingSenderId: "594349099610",
+    appId: "1:594349099610:web:09382c3c69307bd1d7a663",
+  });
+
+  const auth = firebase.auth();
+
+  document.getElementById("loginForm").addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const email = document.getElementById("loginEmail").value.trim();
+    const password = document.getElementById("loginPassword").value;
+
+    try {
+      const cred = await auth.signInWithEmailAndPassword(email, password);
+      const idToken = await cred.user.getIdToken(true);
+
+      const res = await fetch("/session_login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        credentials: "include",
+        body: JSON.stringify({ idToken })
+      });
+
+      const data = await res.json();
+
+      if (data.ok) {
+        // ✅ STEP 4 – HARD REDIRECT AFTER SESSION CONFIRM
+        window.location.href = data.redirect;
+      } else {
+        alert(data.error || "Login failed");
+      }
+
+    } catch (err) {
+      alert(err.message);
+    }
+  });
+</script>
+
+{% endblock %}

@@ -1,0 +1,137 @@
+<nav class="navbar navbar-expand-lg sticky-top" id="mainNavbar">
+  <div class="container-fluid">
+
+    <!-- LOGO -->
+    <a class="navbar-brand px-3" href="{{ url_for('index') }}">
+      <img src="{{ url_for('static', filename='assets/logo.png') }}" width="45" height="45" alt="CropSense">
+    </a>
+
+    <!-- TOGGLER -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- CENTER LINKS -->
+    <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link fw-bold mx-3 {% if request.endpoint == 'index' %}active{% endif %}"
+            href="{{ url_for('index') }}">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link fw-bold mx-3 {% if request.endpoint == 'recommendations' %}active{% endif %}"
+            href="{{ url_for('recommendations') }}?fresh=1">Our AI</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link fw-bold mx-3 {% if request.endpoint == 'plans' %}active{% endif %}"
+            href="{{ url_for('plans') }}">
+            Plans
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link fw-bold mx-3 {% if request.endpoint == 'about_us' %}active{% endif %}"
+            href="{{ url_for('about_us') }}">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link fw-bold mx-3 {% if request.endpoint == 'contact_us' %}active{% endif %}"
+            href="{{ url_for('contact_us') }}">Contact Us</a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- RIGHT SIDE -->
+    <div class="d-flex align-items-center px-3">
+
+      {% if current_user and current_user.get("quota") %}
+      <span class="badge bg-success me-2">
+        {{ current_user.quota.total - current_user.quota.used }} runs left
+      </span>
+      {% endif %}
+
+
+
+      {% if session.get('user') %}
+      <!-- PROFILE AVATAR -->
+      {% set first_letter = session['user'][0]|upper %}
+      <div class="dropdown">
+
+        <button class="profile-avatar" data-bs-toggle="dropdown" title="{{ session.get('email', '') }}">
+          {{ first_letter }}
+        </button>
+
+        <ul class="dropdown-menu dropdown-menu-end shadow">
+          <li class="dropdown-header fw-semibold">
+            {{ session.get('user') }}
+          </li>
+
+
+
+          <li>
+            <a class="dropdown-item" href="#">
+              Profile (Coming Soon)
+            </a>
+          </li>
+
+          <li>
+            <a class="dropdown-item" href="{{ url_for('my_history') }}">
+              My History
+            </a>
+
+          </li>
+
+          {% if session.get('role') == 'admin' %}
+          <li>
+            <a class="dropdown-item text-warning" href="{{ url_for('admin_dashboard') }}">
+              Admin Dashboard
+            </a>
+          </li>
+          {% endif %}
+
+          <li>
+            <hr class="dropdown-divider">
+          </li>
+
+          <li>
+            <a class="dropdown-item text-danger" href="{{ url_for('logout') }}">
+              Logout
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      {% else %}
+      <!-- BEFORE LOGIN -->
+      <a href="{{ url_for('login') }}" class="btn btn-outline-success me-2">
+        Login
+      </a>
+
+      <a href="{{ url_for('signup') }}" class="btn btn-success">
+        Sign Up
+      </a>
+      {% endif %}
+
+    </div>
+  </div>
+</nav>
+
+<!-- ================= PROFILE AVATAR STYLE ================= -->
+<style>
+  .profile-avatar {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #2e7d32, #66bb6a);
+    color: #fff;
+    font-weight: 700;
+    font-size: 18px;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+
+  .profile-avatar:hover {
+    opacity: 0.9;
+  }
+</style>

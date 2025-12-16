@@ -1,0 +1,1988 @@
+[
+  {
+    "cropname": "Rice",
+    "statename": "Others",
+    "cropyear": "2024-25",
+    "Production (Lakh Tonnes)": "29.33"
+  },
+  {
+    "cropname": "Rice",
+    "statename": "Himachal Pradesh",
+    "cropyear": "2024-25",
+    "Production (Lakh Tonnes)": "1.58"
+  },
+  {
+    "cropname": "Rice",
+    "statename": "Punjab",
+    "cropyear": "2024-25",
+    "Production (Lakh Tonnes)": "143.61"
+  },
+  {
+    "cropname": "Rice",
+    "statename": "Uttarakhand",
+    "cropyear": "2024-25",
+    "Production (Lakh Tonnes)": "6.72"
+  },
+  {
+    "cropname": "Rice",
+    "statename": "Haryana",
+    "cropyear": "2024-25",
+    "Production (Lakh Tonnes)": "60.6"
+  },
+  {
+    "cropname": "Rice",
+    "statename": "Rajasthan",
+    "cropyear": "2024-25",
+    "Production (Lakh Tonnes)": "9.16"
+  },
+  {
+    "cropname": "Rice",
+    "statename": "Uttar Pradesh",
+    "cropyear": "2024-25",
+    "Production (Lakh Tonnes)": "209.31"
+  },
+  {
+    "cropname": "Rice",
+    "statename": "Bihar",
+    "cropyear": "2024-25",
+    "Production (Lakh Tonnes)": "84.41"
+  },
+  {
+    "cropname": "Rice",
+    "statename": "Assam",
+    "cropyear": "2024-25",
+    "Production (Lakh Tonnes)": "49.18"
+  },
+  {
+    "cropname": "Rice",
+    "statename": "West Bengal",
+    "cropyear": "2024-25",
+    "Production (Lakh Tonnes)": "164.91"
+  },
+  {
+    "cropname": "Rice",
+    "statename": "Jharkhand",
+    "cropyear": "2024-25",
+    "Production (Lakh Tonnes)": "27.77"
+  },
+  {
+    "cropname": "Rice",
+    "statename": "Odisha",
+    "cropyear": "2024-25",
+    "Production (Lakh Tonnes)": "96.14"
+  },
+  {
+    "cropname": "Rice",
+    "statename": "Chhattisgarh",
+    "cropyear": "2024-25",
+    "Production (Lakh Tonnes)": "85.35"
+  },
+  {
+    "cropname": "Rice",
+    "statename": "Madhya Pradesh",
+    "cropyear": "2024-25",
+    "Production (Lakh Tonnes)": "91.5"
+  },
+  {
+    "cropname": "Rice",
+    "statename": "Gujarat",
+    "cropyear": "2024-25",
+    "Production (Lakh Tonnes)": "22.89"
+  },
+  {
+    "cropname": "Rice",
+    "statename": "Maharashtra",
+    "cropyear": "2024-25",
+    "Production (Lakh Tonnes)": "40.08"
+  },
+  {
+    "cropname": "Rice",
+    "statename": "Andhra Pradesh",
+    "cropyear": "2024-25",
+    "Production (Lakh Tonnes)": "80.16"
+  },
+  {
+    "cropname": "Rice",
+    "statename": "Karnataka",
+    "cropyear": "2024-25",
+    "Production (Lakh Tonnes)": "40.46"
+  },
+  {
+    "cropname": "Rice",
+    "statename": "Kerala",
+    "cropyear": "2024-25",
+    "Production (Lakh Tonnes)": "5.28"
+  },
+  {
+    "cropname": "Rice",
+    "statename": "Tamil Nadu",
+    "cropyear": "2024-25",
+    "Production (Lakh Tonnes)": "71.36"
+  },
+  {
+    "cropname": "Rice",
+    "statename": "Telangana",
+    "cropyear": "2024-25",
+    "Production (Lakh Tonnes)": "170.94"
+  },
+  {
+    "cropname": "Wheat",
+    "statename": "Others",
+    "cropyear": "2024-25",
+    "Production (Lakh Tonnes)": "6.92"
+  },
+  {
+    "cropname": "Wheat",
+    "statename": "Himachal Pradesh",
+    "cropyear": "2024-25",
+    "Production (Lakh Tonnes)": "6.98"
+  },
+  {
+    "cropname": "Wheat",
+    "statename": "Punjab",
+    "cropyear": "2024-25",
+    "Production (Lakh Tonnes)": "179.05"
+  },
+  {
+    "cropname": "Wheat",
+    "statename": "Uttarakhand",
+    "cropyear": "2024-25",
+    "Production (Lakh Tonnes)": "8.49"
+  },
+  {
+    "cropname": "Wheat",
+    "statename": "Haryana",
+    "cropyear": "2024-25",
+    "Production (Lakh Tonnes)": "114.75"
+  },
+  {
+    "cropname": "Wheat",
+    "statename": "Rajasthan",
+    "cropyear": "2024-25",
+    "Production (Lakh Tonnes)": "113.82"
+  },
+  {
+    "cropname": "Wheat",
+    "statename": "Uttar Pradesh",
+    "cropyear": "2024-25",
+    "Production (Lakh Tonnes)": "362.42"
+  },
+  {
+    "cropname": "Wheat",
+    "statename": "Bihar",
+    "cropyear": "2024-25",
+    "Production (Lakh Tonnes)": "71.2"
+  },
+  {
+    "cropname": "Wheat",
+    "statename": "Assam",
+    "cropyear": "2024-25",
+    "Production (Lakh Tonnes)": "0.13"
+  },
+  {
+    "cropname": "Wheat",
+    "statename": "West Bengal",
+    "cropyear": "2024-25",
+    "Production (Lakh Tonnes)": "5.63"
+  },
+  {
+    "cropname": "Wheat",
+    "statename": "Jharkhand",
+    "cropyear": "2024-25",
+    "Production (Lakh Tonnes)": "5.39"
+  },
+  {
+    "cropname": "Wheat",
+    "statename": "Odisha",
+    "cropyear": "2024-25",
+    "Production (Lakh Tonnes)": "0"
+  },
+  {
+    "cropname": "Wheat",
+    "statename": "Chhattisgarh",
+    "cropyear": "2024-25",
+    "Production (Lakh Tonnes)": "2.35"
+  },
+  {
+    "cropname": "Wheat",
+    "statename": "Madhya Pradesh",
+    "cropyear": "2024-25",
+    "Production (Lakh Tonnes)": "233.66"
+  },
+  {
+    "cropname": "Wheat",
+    "statename": "Gujarat",
+    "cropyear": "2024-25",
+    "Production (Lakh Tonnes)": "40.14"
+  },
+  {
+    "cropname": "Wheat",
+    "statename": "Maharashtra",
+    "cropyear": "2024-25",
+    "Production (Lakh Tonnes)": "22.03"
+  },
+  {
+    "cropname": "Wheat",
+    "statename": "Karnataka",
+    "cropyear": "2024-25",
+    "Production (Lakh Tonnes)": "2.04"
+  },
+  {
+    "cropname": "Wheat",
+    "statename": "Telangana",
+    "cropyear": "2024-25",
+    "Production (Lakh Tonnes)": "0.05"
+  },
+  {
+    "cropname": "Maize",
+    "statename": "Others",
+    "cropyear": "2024-25",
+    "Production (Lakh Tonnes)": "9.61"
+  },
+  {
+    "cropname": "Maize",
+    "statename": "Himachal Pradesh",
+    "cropyear": "2024-25",
+    "Production (Lakh Tonnes)": "7.47"
+  },
+  {
+    "cropname": "Maize",
+    "statename": "Punjab",
+    "cropyear": "2024-25",
+    "Production (Lakh Tonnes)": "3.7"
+  },
+  {
+    "cropname": "Maize",
+    "statename": "Uttarakhand",
+    "cropyear": "2024-25",
+    "Production (Lakh Tonnes)": "0.5"
+  },
+  {
+    "cropname": "Maize",
+    "statename": "Haryana",
+    "cropyear": "2024-25",
+    "Production (Lakh Tonnes)": "0.13"
+  },
+  {
+    "cropname": "Maize",
+    "statename": "Rajasthan",
+    "cropyear": "2024-25",
+    "Production (Lakh Tonnes)": "26.95"
+  },
+  {
+    "cropname": "Maize",
+    "statename": "Uttar Pradesh",
+    "cropyear": "2024-25",
+    "Production (Lakh Tonnes)": "17.04"
+  },
+  {
+    "cropname": "Maize",
+    "statename": "Bihar",
+    "cropyear": "2024-25",
+    "Production (Lakh Tonnes)": "49.01"
+  },
+  {
+    "cropname": "Maize",
+    "statename": "Assam",
+    "cropyear": "2024-25",
+    "Production (Lakh Tonnes)": "4.94"
+  },
+  {
+    "cropname": "Maize",
+    "statename": "West Bengal",
+    "cropyear": "2024-25",
+    "Production (Lakh Tonnes)": "27.89"
+  },
+  {
+    "cropname": "Maize",
+    "statename": "Jharkhand",
+    "cropyear": "2024-25",
+    "Production (Lakh Tonnes)": "6.75"
+  },
+  {
+    "cropname": "Maize",
+    "statename": "Odisha",
+    "cropyear": "2024-25",
+    "Production (Lakh Tonnes)": "3.24"
+  },
+  {
+    "cropname": "Maize",
+    "statename": "Chhattisgarh",
+    "cropyear": "2024-25",
+    "Production (Lakh Tonnes)": "3.83"
+  },
+  {
+    "cropname": "Maize",
+    "statename": "Madhya Pradesh",
+    "cropyear": "2024-25",
+    "Production (Lakh Tonnes)": "67.1"
+  },
+  {
+    "cropname": "Maize",
+    "statename": "Gujarat",
+    "cropyear": "2024-25",
+    "Production (Lakh Tonnes)": "7.91"
+  },
+  {
+    "cropname": "Maize",
+    "statename": "Maharashtra",
+    "cropyear": "2024-25",
+    "Production (Lakh Tonnes)": "48.76"
+  },
+  {
+    "cropname": "Maize",
+    "statename": "Andhra Pradesh",
+    "cropyear": "2024-25",
+    "Production (Lakh Tonnes)": "19.76"
+  },
+  {
+    "cropname": "Maize",
+    "statename": "Karnataka",
+    "cropyear": "2024-25",
+    "Production (Lakh Tonnes)": "61.63"
+  },
+  {
+    "cropname": "Maize",
+    "statename": "Kerala",
+    "cropyear": "2024-25",
+    "Production (Lakh Tonnes)": "0"
+  },
+  {
+    "cropname": "Maize",
+    "statename": "Tamil Nadu",
+    "cropyear": "2024-25",
+    "Production (Lakh Tonnes)": "26.49"
+  },
+  {
+    "cropname": "Maize",
+    "statename": "Telangana",
+    "cropyear": "2024-25",
+    "Production (Lakh Tonnes)": "30.12"
+  },
+  {
+    "cropname": "Barley",
+    "statename": "Others",
+    "cropyear": "2024-25",
+    "Production (Lakh Tonnes)": "0.22"
+  },
+  {
+    "cropname": "Barley",
+    "statename": "Himachal Pradesh",
+    "cropyear": "2024-25",
+    "Production (Lakh Tonnes)": "0.29"
+  },
+  {
+    "cropname": "Barley",
+    "statename": "Punjab",
+    "cropyear": "2024-25",
+    "Production (Lakh Tonnes)": "0.2"
+  },
+  {
+    "cropname": "Barley",
+    "statename": "Uttarakhand",
+    "cropyear": "2024-25",
+    "Production (Lakh Tonnes)": "0.2"
+  },
+  {
+    "cropname": "Barley",
+    "statename": "Haryana",
+    "cropyear": "2024-25",
+    "Production (Lakh Tonnes)": "0.46"
+  },
+  {
+    "cropname": "Barley",
+    "statename": "Rajasthan",
+    "cropyear": "2024-25",
+    "Production (Lakh Tonnes)": "11.02"
+  },
+  {
+    "cropname": "Barley",
+    "statename": "Uttar Pradesh",
+    "cropyear": "2024-25",
+    "Production (Lakh Tonnes)": "5.39"
+  },
+  {
+    "cropname": "Barley",
+    "statename": "Bihar",
+    "cropyear": "2024-25",
+    "Production (Lakh Tonnes)": "0.15"
+  },
+  {
+    "cropname": "Barley",
+    "statename": "West Bengal",
+    "cropyear": "2024-25",
+    "Production (Lakh Tonnes)": "0"
+  },
+  {
+    "cropname": "Barley",
+    "statename": "Chhattisgarh",
+    "cropyear": "2024-25",
+    "Production (Lakh Tonnes)": "0"
+  },
+  {
+    "cropname": "Barley",
+    "statename": "Madhya Pradesh",
+    "cropyear": "2024-25",
+    "Production (Lakh Tonnes)": "0.51"
+  },
+  {
+    "cropname": "Cotton",
+    "statename": "Others",
+    "cropyear": "2024-25",
+    "Production (Lakh Tonnes)": "0.04"
+  },
+  {
+    "cropname": "Cotton",
+    "statename": "Punjab",
+    "cropyear": "2024-25",
+    "Production (Lakh Tonnes)": "4.06"
+  },
+  {
+    "cropname": "Cotton",
+    "statename": "Haryana",
+    "cropyear": "2024-25",
+    "Production (Lakh Tonnes)": "11.77"
+  },
+  {
+    "cropname": "Cotton",
+    "statename": "Rajasthan",
+    "cropyear": "2024-25",
+    "Production (Lakh Tonnes)": "17.86"
+  },
+  {
+    "cropname": "Cotton",
+    "statename": "Uttar Pradesh",
+    "cropyear": "2024-25",
+    "Production (Lakh Tonnes)": "0.39"
+  },
+  {
+    "cropname": "Cotton",
+    "statename": "Assam",
+    "cropyear": "2024-25",
+    "Production (Lakh Tonnes)": "0"
+  },
+  {
+    "cropname": "Cotton",
+    "statename": "West Bengal",
+    "cropyear": "2024-25",
+    "Production (Lakh Tonnes)": "0"
+  },
+  {
+    "cropname": "Cotton",
+    "statename": "Odisha",
+    "cropyear": "2024-25",
+    "Production (Lakh Tonnes)": "5.17"
+  },
+  {
+    "cropname": "Cotton",
+    "statename": "Chhattisgarh",
+    "cropyear": "2024-25",
+    "Production (Lakh Tonnes)": "0.12"
+  },
+  {
+    "cropname": "Cotton",
+    "statename": "Madhya Pradesh",
+    "cropyear": "2024-25",
+    "Production (Lakh Tonnes)": "15.35"
+  },
+  {
+    "cropname": "Cotton",
+    "statename": "Gujarat",
+    "cropyear": "2024-25",
+    "Production (Lakh Tonnes)": "69.61"
+  },
+  {
+    "cropname": "Cotton",
+    "statename": "Maharashtra",
+    "cropyear": "2024-25",
+    "Production (Lakh Tonnes)": "92.32"
+  },
+  {
+    "cropname": "Cotton",
+    "statename": "Andhra Pradesh",
+    "cropyear": "2024-25",
+    "Production (Lakh Tonnes)": "9.93"
+  },
+  {
+    "cropname": "Cotton",
+    "statename": "Karnataka",
+    "cropyear": "2024-25",
+    "Production (Lakh Tonnes)": "22.67"
+  },
+  {
+    "cropname": "Cotton",
+    "statename": "Kerala",
+    "cropyear": "2024-25",
+    "Production (Lakh Tonnes)": "0"
+  },
+  {
+    "cropname": "Cotton",
+    "statename": "Tamil Nadu",
+    "cropyear": "2024-25",
+    "Production (Lakh Tonnes)": "2.1"
+  },
+  {
+    "cropname": "Cotton",
+    "statename": "Telangana",
+    "cropyear": "2024-25",
+    "Production (Lakh Tonnes)": "55.5"
+  },
+  {
+    "cropname": "Soybean",
+    "statename": "Others",
+    "cropyear": "2024-25",
+    "Production (Lakh Tonnes)": "0.31"
+  },
+  {
+    "cropname": "Soybean",
+    "statename": "Himachal Pradesh",
+    "cropyear": "2024-25",
+    "Production (Lakh Tonnes)": "0"
+  },
+  {
+    "cropname": "Soybean",
+    "statename": "Uttarakhand",
+    "cropyear": "2024-25",
+    "Production (Lakh Tonnes)": "0.1"
+  },
+  {
+    "cropname": "Soybean",
+    "statename": "Rajasthan",
+    "cropyear": "2024-25",
+    "Production (Lakh Tonnes)": "11.74"
+  },
+  {
+    "cropname": "Soybean",
+    "statename": "Uttar Pradesh",
+    "cropyear": "2024-25",
+    "Production (Lakh Tonnes)": "0.27"
+  },
+  {
+    "cropname": "Soybean",
+    "statename": "Bihar",
+    "cropyear": "2024-25",
+    "Production (Lakh Tonnes)": "0.08"
+  },
+  {
+    "cropname": "Soybean",
+    "statename": "West Bengal",
+    "cropyear": "2024-25",
+    "Production (Lakh Tonnes)": "0"
+  },
+  {
+    "cropname": "Soybean",
+    "statename": "Jharkhand",
+    "cropyear": "2024-25",
+    "Production (Lakh Tonnes)": "0"
+  },
+  {
+    "cropname": "Soybean",
+    "statename": "Chhattisgarh",
+    "cropyear": "2024-25",
+    "Production (Lakh Tonnes)": "0.23"
+  },
+  {
+    "cropname": "Soybean",
+    "statename": "Madhya Pradesh",
+    "cropyear": "2024-25",
+    "Production (Lakh Tonnes)": "52.85"
+  },
+  {
+    "cropname": "Soybean",
+    "statename": "Gujarat",
+    "cropyear": "2024-25",
+    "Production (Lakh Tonnes)": "4.4"
+  },
+  {
+    "cropname": "Soybean",
+    "statename": "Maharashtra",
+    "cropyear": "2024-25",
+    "Production (Lakh Tonnes)": "74.03"
+  },
+  {
+    "cropname": "Soybean",
+    "statename": "Andhra Pradesh",
+    "cropyear": "2024-25",
+    "Production (Lakh Tonnes)": "0.08"
+  },
+  {
+    "cropname": "Soybean",
+    "statename": "Karnataka",
+    "cropyear": "2024-25",
+    "Production (Lakh Tonnes)": "4.82"
+  },
+  {
+    "cropname": "Soybean",
+    "statename": "Telangana",
+    "cropyear": "2024-25",
+    "Production (Lakh Tonnes)": "2.91"
+  },
+  {
+    "cropname": "Ragi",
+    "statename": "Others",
+    "cropyear": "2024-25",
+    "Production (Lakh Tonnes)": "0.33"
+  },
+  {
+    "cropname": "Ragi",
+    "statename": "Himachal Pradesh",
+    "cropyear": "2024-25",
+    "Production (Lakh Tonnes)": "0.01"
+  },
+  {
+    "cropname": "Ragi",
+    "statename": "Uttarakhand",
+    "cropyear": "2024-25",
+    "Production (Lakh Tonnes)": "1.01"
+  },
+  {
+    "cropname": "Ragi",
+    "statename": "Bihar",
+    "cropyear": "2024-25",
+    "Production (Lakh Tonnes)": "0.02"
+  },
+  {
+    "cropname": "Ragi",
+    "statename": "West Bengal",
+    "cropyear": "2024-25",
+    "Production (Lakh Tonnes)": "0.06"
+  },
+  {
+    "cropname": "Ragi",
+    "statename": "Jharkhand",
+    "cropyear": "2024-25",
+    "Production (Lakh Tonnes)": "0.44"
+  },
+  {
+    "cropname": "Ragi",
+    "statename": "Odisha",
+    "cropyear": "2024-25",
+    "Production (Lakh Tonnes)": "0.35"
+  },
+  {
+    "cropname": "Ragi",
+    "statename": "Chhattisgarh",
+    "cropyear": "2024-25",
+    "Production (Lakh Tonnes)": "0.01"
+  },
+  {
+    "cropname": "Ragi",
+    "statename": "Gujarat",
+    "cropyear": "2024-25",
+    "Production (Lakh Tonnes)": "0.08"
+  },
+  {
+    "cropname": "Ragi",
+    "statename": "Maharashtra",
+    "cropyear": "2024-25",
+    "Production (Lakh Tonnes)": "0.96"
+  },
+  {
+    "cropname": "Ragi",
+    "statename": "Andhra Pradesh",
+    "cropyear": "2024-25",
+    "Production (Lakh Tonnes)": "0.31"
+  },
+  {
+    "cropname": "Ragi",
+    "statename": "Karnataka",
+    "cropyear": "2024-25",
+    "Production (Lakh Tonnes)": "12.34"
+  },
+  {
+    "cropname": "Ragi",
+    "statename": "Kerala",
+    "cropyear": "2024-25",
+    "Production (Lakh Tonnes)": "0"
+  },
+  {
+    "cropname": "Ragi",
+    "statename": "Tamil Nadu",
+    "cropyear": "2024-25",
+    "Production (Lakh Tonnes)": "2.41"
+  },
+  {
+    "cropname": "Ragi",
+    "statename": "Telangana",
+    "cropyear": "2024-25",
+    "Production (Lakh Tonnes)": "0"
+  },
+  {
+    "cropname": "Moong",
+    "statename": "Others",
+    "cropyear": "2024-25",
+    "Production (Lakh Tonnes)": "0.04"
+  },
+  {
+    "cropname": "Moong",
+    "statename": "Himachal Pradesh",
+    "cropyear": "2024-25",
+    "Production (Lakh Tonnes)": "0"
+  },
+  {
+    "cropname": "Moong",
+    "statename": "Punjab",
+    "cropyear": "2024-25",
+    "Production (Lakh Tonnes)": "0.53"
+  },
+  {
+    "cropname": "Moong",
+    "statename": "Haryana",
+    "cropyear": "2024-25",
+    "Production (Lakh Tonnes)": "0.44"
+  },
+  {
+    "cropname": "Moong",
+    "statename": "Rajasthan",
+    "cropyear": "2024-25",
+    "Production (Lakh Tonnes)": "11.96"
+  },
+  {
+    "cropname": "Moong",
+    "statename": "Uttar Pradesh",
+    "cropyear": "2024-25",
+    "Production (Lakh Tonnes)": "1.47"
+  },
+  {
+    "cropname": "Moong",
+    "statename": "Bihar",
+    "cropyear": "2024-25",
+    "Production (Lakh Tonnes)": "1.21"
+  },
+  {
+    "cropname": "Moong",
+    "statename": "Assam",
+    "cropyear": "2024-25",
+    "Production (Lakh Tonnes)": "0.13"
+  },
+  {
+    "cropname": "Moong",
+    "statename": "West Bengal",
+    "cropyear": "2024-25",
+    "Production (Lakh Tonnes)": "0.59"
+  },
+  {
+    "cropname": "Moong",
+    "statename": "Jharkhand",
+    "cropyear": "2024-25",
+    "Production (Lakh Tonnes)": "0.25"
+  },
+  {
+    "cropname": "Moong",
+    "statename": "Odisha",
+    "cropyear": "2024-25",
+    "Production (Lakh Tonnes)": "0.95"
+  },
+  {
+    "cropname": "Moong",
+    "statename": "Chhattisgarh",
+    "cropyear": "2024-25",
+    "Production (Lakh Tonnes)": "0.02"
+  },
+  {
+    "cropname": "Moong",
+    "statename": "Madhya Pradesh",
+    "cropyear": "2024-25",
+    "Production (Lakh Tonnes)": "14.25"
+  },
+  {
+    "cropname": "Moong",
+    "statename": "Gujarat",
+    "cropyear": "2024-25",
+    "Production (Lakh Tonnes)": "1.05"
+  },
+  {
+    "cropname": "Moong",
+    "statename": "Maharashtra",
+    "cropyear": "2024-25",
+    "Production (Lakh Tonnes)": "1.67"
+  },
+  {
+    "cropname": "Moong",
+    "statename": "Andhra Pradesh",
+    "cropyear": "2024-25",
+    "Production (Lakh Tonnes)": "0.57"
+  },
+  {
+    "cropname": "Moong",
+    "statename": "Karnataka",
+    "cropyear": "2024-25",
+    "Production (Lakh Tonnes)": "2.43"
+  },
+  {
+    "cropname": "Moong",
+    "statename": "Kerala",
+    "cropyear": "2024-25",
+    "Production (Lakh Tonnes)": "0"
+  },
+  {
+    "cropname": "Moong",
+    "statename": "Tamil Nadu",
+    "cropyear": "2024-25",
+    "Production (Lakh Tonnes)": "0.39"
+  },
+  {
+    "cropname": "Moong",
+    "statename": "Telangana",
+    "cropyear": "2024-25",
+    "Production (Lakh Tonnes)": "0.24"
+  },
+  {
+    "cropname": "Rice",
+    "statename": "Jammu And Kashmir",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "6.41"
+  },
+  {
+    "cropname": "Rice",
+    "statename": "Himachal Pradesh",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "1.73"
+  },
+  {
+    "cropname": "Rice",
+    "statename": "Punjab",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "143.56"
+  },
+  {
+    "cropname": "Rice",
+    "statename": "Chandigarh",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "0"
+  },
+  {
+    "cropname": "Rice",
+    "statename": "Uttarakhand",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "6.44"
+  },
+  {
+    "cropname": "Rice",
+    "statename": "Haryana",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "59.76"
+  },
+  {
+    "cropname": "Rice",
+    "statename": "Delhi",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "0.17"
+  },
+  {
+    "cropname": "Rice",
+    "statename": "Rajasthan",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "7.46"
+  },
+  {
+    "cropname": "Rice",
+    "statename": "Uttar Pradesh",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "159.9"
+  },
+  {
+    "cropname": "Rice",
+    "statename": "Bihar",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "79.02"
+  },
+  {
+    "cropname": "Rice",
+    "statename": "Sikkim",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "0.08"
+  },
+  {
+    "cropname": "Rice",
+    "statename": "Arunachal Pradesh",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "2.55"
+  },
+  {
+    "cropname": "Rice",
+    "statename": "Nagaland",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "3.69"
+  },
+  {
+    "cropname": "Rice",
+    "statename": "Manipur",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "3.48"
+  },
+  {
+    "cropname": "Rice",
+    "statename": "Mizoram",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "0.4"
+  },
+  {
+    "cropname": "Rice",
+    "statename": "Tripura",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "7.89"
+  },
+  {
+    "cropname": "Rice",
+    "statename": "Meghalaya",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "2.65"
+  },
+  {
+    "cropname": "Rice",
+    "statename": "Assam",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "55.39"
+  },
+  {
+    "cropname": "Rice",
+    "statename": "West Bengal",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "156.87"
+  },
+  {
+    "cropname": "Rice",
+    "statename": "Jharkhand",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "15.16"
+  },
+  {
+    "cropname": "Rice",
+    "statename": "Odisha",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "84.74"
+  },
+  {
+    "cropname": "Rice",
+    "statename": "Chhattisgarh",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "97.03"
+  },
+  {
+    "cropname": "Rice",
+    "statename": "Madhya Pradesh",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "72.4"
+  },
+  {
+    "cropname": "Rice",
+    "statename": "Gujarat",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "24.07"
+  },
+  {
+    "cropname": "Rice",
+    "statename": "Maharashtra",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "39"
+  },
+  {
+    "cropname": "Rice",
+    "statename": "Andhra Pradesh",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "73.42"
+  },
+  {
+    "cropname": "Rice",
+    "statename": "Karnataka",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "31.27"
+  },
+  {
+    "cropname": "Rice",
+    "statename": "Goa",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "0.95"
+  },
+  {
+    "cropname": "Rice",
+    "statename": "Kerala",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "4.98"
+  },
+  {
+    "cropname": "Rice",
+    "statename": "Tamil Nadu",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "67.99"
+  },
+  {
+    "cropname": "Rice",
+    "statename": "Puducherry",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "0.61"
+  },
+  {
+    "cropname": "Rice",
+    "statename": "Andaman And Nicobar Islands",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "0.1"
+  },
+  {
+    "cropname": "Rice",
+    "statename": "Telangana",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "168.74"
+  },
+  {
+    "cropname": "Rice",
+    "statename": "Dadra And Nagar Haveli",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "0.36"
+  },
+  {
+    "cropname": "Wheat",
+    "statename": "Jammu And Kashmir",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "5.87"
+  },
+  {
+    "cropname": "Wheat",
+    "statename": "Himachal Pradesh",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "7.86"
+  },
+  {
+    "cropname": "Wheat",
+    "statename": "Punjab",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "177.37"
+  },
+  {
+    "cropname": "Wheat",
+    "statename": "Chandigarh",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "0.03"
+  },
+  {
+    "cropname": "Wheat",
+    "statename": "Uttarakhand",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "8.69"
+  },
+  {
+    "cropname": "Wheat",
+    "statename": "Haryana",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "111.91"
+  },
+  {
+    "cropname": "Wheat",
+    "statename": "Delhi",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "0.8"
+  },
+  {
+    "cropname": "Wheat",
+    "statename": "Rajasthan",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "97"
+  },
+  {
+    "cropname": "Wheat",
+    "statename": "Uttar Pradesh",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "353.4"
+  },
+  {
+    "cropname": "Wheat",
+    "statename": "Bihar",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "71.68"
+  },
+  {
+    "cropname": "Wheat",
+    "statename": "Sikkim",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "0"
+  },
+  {
+    "cropname": "Wheat",
+    "statename": "Arunachal Pradesh",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "0.07"
+  },
+  {
+    "cropname": "Wheat",
+    "statename": "Nagaland",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "0.03"
+  },
+  {
+    "cropname": "Wheat",
+    "statename": "Manipur",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "0.06"
+  },
+  {
+    "cropname": "Wheat",
+    "statename": "Tripura",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "0"
+  },
+  {
+    "cropname": "Wheat",
+    "statename": "Meghalaya",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "0"
+  },
+  {
+    "cropname": "Wheat",
+    "statename": "Assam",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "0.13"
+  },
+  {
+    "cropname": "Wheat",
+    "statename": "West Bengal",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "5.93"
+  },
+  {
+    "cropname": "Wheat",
+    "statename": "Jharkhand",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "4.81"
+  },
+  {
+    "cropname": "Wheat",
+    "statename": "Odisha",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "0"
+  },
+  {
+    "cropname": "Wheat",
+    "statename": "Chhattisgarh",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "1.81"
+  },
+  {
+    "cropname": "Wheat",
+    "statename": "Madhya Pradesh",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "225.81"
+  },
+  {
+    "cropname": "Wheat",
+    "statename": "Gujarat",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "37.73"
+  },
+  {
+    "cropname": "Wheat",
+    "statename": "Maharashtra",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "19.88"
+  },
+  {
+    "cropname": "Wheat",
+    "statename": "Karnataka",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "1.9"
+  },
+  {
+    "cropname": "Wheat",
+    "statename": "Telangana",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "0.07"
+  },
+  {
+    "cropname": "Wheat",
+    "statename": "Ladakh",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "0.07"
+  },
+  {
+    "cropname": "Maize",
+    "statename": "Jammu And Kashmir",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "5.88"
+  },
+  {
+    "cropname": "Maize",
+    "statename": "Himachal Pradesh",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "6.08"
+  },
+  {
+    "cropname": "Maize",
+    "statename": "Punjab",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "3.62"
+  },
+  {
+    "cropname": "Maize",
+    "statename": "Chandigarh",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "0"
+  },
+  {
+    "cropname": "Maize",
+    "statename": "Uttarakhand",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "0.42"
+  },
+  {
+    "cropname": "Maize",
+    "statename": "Haryana",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "0.18"
+  },
+  {
+    "cropname": "Maize",
+    "statename": "Delhi",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "0"
+  },
+  {
+    "cropname": "Maize",
+    "statename": "Rajasthan",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "21.7"
+  },
+  {
+    "cropname": "Maize",
+    "statename": "Uttar Pradesh",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "26.68"
+  },
+  {
+    "cropname": "Maize",
+    "statename": "Bihar",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "57.09"
+  },
+  {
+    "cropname": "Maize",
+    "statename": "Sikkim",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "0.53"
+  },
+  {
+    "cropname": "Maize",
+    "statename": "Arunachal Pradesh",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "0.87"
+  },
+  {
+    "cropname": "Maize",
+    "statename": "Nagaland",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "0.89"
+  },
+  {
+    "cropname": "Maize",
+    "statename": "Manipur",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "0.54"
+  },
+  {
+    "cropname": "Maize",
+    "statename": "Mizoram",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "0.11"
+  },
+  {
+    "cropname": "Maize",
+    "statename": "Tripura",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "0.34"
+  },
+  {
+    "cropname": "Maize",
+    "statename": "Meghalaya",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "0.44"
+  },
+  {
+    "cropname": "Maize",
+    "statename": "Assam",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "5.33"
+  },
+  {
+    "cropname": "Maize",
+    "statename": "West Bengal",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "26.04"
+  },
+  {
+    "cropname": "Maize",
+    "statename": "Jharkhand",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "5.65"
+  },
+  {
+    "cropname": "Maize",
+    "statename": "Odisha",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "3.16"
+  },
+  {
+    "cropname": "Maize",
+    "statename": "Chhattisgarh",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "3.44"
+  },
+  {
+    "cropname": "Maize",
+    "statename": "Madhya Pradesh",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "43.39"
+  },
+  {
+    "cropname": "Maize",
+    "statename": "Gujarat",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "9.09"
+  },
+  {
+    "cropname": "Maize",
+    "statename": "Maharashtra",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "24.5"
+  },
+  {
+    "cropname": "Maize",
+    "statename": "Andhra Pradesh",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "18.19"
+  },
+  {
+    "cropname": "Maize",
+    "statename": "Karnataka",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "56.29"
+  },
+  {
+    "cropname": "Maize",
+    "statename": "Kerala",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "0.01"
+  },
+  {
+    "cropname": "Maize",
+    "statename": "Tamil Nadu",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "28.39"
+  },
+  {
+    "cropname": "Maize",
+    "statename": "Andaman And Nicobar Islands",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "0"
+  },
+  {
+    "cropname": "Maize",
+    "statename": "Telangana",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "27.79"
+  },
+  {
+    "cropname": "Barley",
+    "statename": "Jammu And Kashmir",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "0.05"
+  },
+  {
+    "cropname": "Barley",
+    "statename": "Himachal Pradesh",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "0.3"
+  },
+  {
+    "cropname": "Barley",
+    "statename": "Punjab",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "0.19"
+  },
+  {
+    "cropname": "Barley",
+    "statename": "Uttarakhand",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "0.25"
+  },
+  {
+    "cropname": "Barley",
+    "statename": "Haryana",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "0.46"
+  },
+  {
+    "cropname": "Barley",
+    "statename": "Delhi",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "0"
+  },
+  {
+    "cropname": "Barley",
+    "statename": "Rajasthan",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "10.36"
+  },
+  {
+    "cropname": "Barley",
+    "statename": "Uttar Pradesh",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "4.72"
+  },
+  {
+    "cropname": "Barley",
+    "statename": "Bihar",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "0.15"
+  },
+  {
+    "cropname": "Barley",
+    "statename": "Sikkim",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "0"
+  },
+  {
+    "cropname": "Barley",
+    "statename": "West Bengal",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "0"
+  },
+  {
+    "cropname": "Barley",
+    "statename": "Chhattisgarh",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "0"
+  },
+  {
+    "cropname": "Barley",
+    "statename": "Madhya Pradesh",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "0.33"
+  },
+  {
+    "cropname": "Barley",
+    "statename": "Ladakh",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "0.17"
+  },
+  {
+    "cropname": "Cotton",
+    "statename": "Punjab",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "6.29"
+  },
+  {
+    "cropname": "Cotton",
+    "statename": "Haryana",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "15.09"
+  },
+  {
+    "cropname": "Cotton",
+    "statename": "Rajasthan",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "26.22"
+  },
+  {
+    "cropname": "Cotton",
+    "statename": "Uttar Pradesh",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "0.09"
+  },
+  {
+    "cropname": "Cotton",
+    "statename": "Nagaland",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "0"
+  },
+  {
+    "cropname": "Cotton",
+    "statename": "Mizoram",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "0"
+  },
+  {
+    "cropname": "Cotton",
+    "statename": "Tripura",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "0"
+  },
+  {
+    "cropname": "Cotton",
+    "statename": "Meghalaya",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "0.02"
+  },
+  {
+    "cropname": "Cotton",
+    "statename": "Assam",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "0.01"
+  },
+  {
+    "cropname": "Cotton",
+    "statename": "West Bengal",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "0"
+  },
+  {
+    "cropname": "Cotton",
+    "statename": "Odisha",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "7.05"
+  },
+  {
+    "cropname": "Cotton",
+    "statename": "Chhattisgarh",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "0.13"
+  },
+  {
+    "cropname": "Cotton",
+    "statename": "Madhya Pradesh",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "18.01"
+  },
+  {
+    "cropname": "Cotton",
+    "statename": "Gujarat",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "90.57"
+  },
+  {
+    "cropname": "Cotton",
+    "statename": "Maharashtra",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "80.45"
+  },
+  {
+    "cropname": "Cotton",
+    "statename": "Andhra Pradesh",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "7.37"
+  },
+  {
+    "cropname": "Cotton",
+    "statename": "Karnataka",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "20.59"
+  },
+  {
+    "cropname": "Cotton",
+    "statename": "Kerala",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "0"
+  },
+  {
+    "cropname": "Cotton",
+    "statename": "Tamil Nadu",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "2.52"
+  },
+  {
+    "cropname": "Cotton",
+    "statename": "Puducherry",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "0.02"
+  },
+  {
+    "cropname": "Cotton",
+    "statename": "Telangana",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "50.8"
+  },
+  {
+    "cropname": "Soybean",
+    "statename": "Himachal Pradesh",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "0"
+  },
+  {
+    "cropname": "Soybean",
+    "statename": "Uttarakhand",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "0.09"
+  },
+  {
+    "cropname": "Soybean",
+    "statename": "Rajasthan",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "11.7"
+  },
+  {
+    "cropname": "Soybean",
+    "statename": "Uttar Pradesh",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "0.18"
+  },
+  {
+    "cropname": "Soybean",
+    "statename": "Bihar",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "0.12"
+  },
+  {
+    "cropname": "Soybean",
+    "statename": "Arunachal Pradesh",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "0.05"
+  },
+  {
+    "cropname": "Soybean",
+    "statename": "Nagaland",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "0.17"
+  },
+  {
+    "cropname": "Soybean",
+    "statename": "Manipur",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "0.03"
+  },
+  {
+    "cropname": "Soybean",
+    "statename": "Mizoram",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "0.01"
+  },
+  {
+    "cropname": "Soybean",
+    "statename": "Meghalaya",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "0.04"
+  },
+  {
+    "cropname": "Soybean",
+    "statename": "West Bengal",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "0"
+  },
+  {
+    "cropname": "Soybean",
+    "statename": "Jharkhand",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "0"
+  },
+  {
+    "cropname": "Soybean",
+    "statename": "Chhattisgarh",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "0.25"
+  },
+  {
+    "cropname": "Soybean",
+    "statename": "Madhya Pradesh",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "54.72"
+  },
+  {
+    "cropname": "Soybean",
+    "statename": "Gujarat",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "3.68"
+  },
+  {
+    "cropname": "Soybean",
+    "statename": "Maharashtra",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "52.58"
+  },
+  {
+    "cropname": "Soybean",
+    "statename": "Andhra Pradesh",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "0.13"
+  },
+  {
+    "cropname": "Soybean",
+    "statename": "Karnataka",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "4.13"
+  },
+  {
+    "cropname": "Soybean",
+    "statename": "Tamil Nadu",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "0.02"
+  },
+  {
+    "cropname": "Soybean",
+    "statename": "Telangana",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "2.7"
+  },
+  {
+    "cropname": "Ragi",
+    "statename": "Jammu And Kashmir",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "0"
+  },
+  {
+    "cropname": "Ragi",
+    "statename": "Himachal Pradesh",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "0.01"
+  },
+  {
+    "cropname": "Ragi",
+    "statename": "Uttarakhand",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "1.06"
+  },
+  {
+    "cropname": "Ragi",
+    "statename": "Bihar",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "0.02"
+  },
+  {
+    "cropname": "Ragi",
+    "statename": "Sikkim",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "0.02"
+  },
+  {
+    "cropname": "Ragi",
+    "statename": "Arunachal Pradesh",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "0.29"
+  },
+  {
+    "cropname": "Ragi",
+    "statename": "Nagaland",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "0"
+  },
+  {
+    "cropname": "Ragi",
+    "statename": "Assam",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "0.01"
+  },
+  {
+    "cropname": "Ragi",
+    "statename": "West Bengal",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "0.06"
+  },
+  {
+    "cropname": "Ragi",
+    "statename": "Jharkhand",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "0.31"
+  },
+  {
+    "cropname": "Ragi",
+    "statename": "Odisha",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "0.56"
+  },
+  {
+    "cropname": "Ragi",
+    "statename": "Chhattisgarh",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "0.01"
+  },
+  {
+    "cropname": "Ragi",
+    "statename": "Gujarat",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "0.08"
+  },
+  {
+    "cropname": "Ragi",
+    "statename": "Maharashtra",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "1.13"
+  },
+  {
+    "cropname": "Ragi",
+    "statename": "Andhra Pradesh",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "0.34"
+  },
+  {
+    "cropname": "Ragi",
+    "statename": "Karnataka",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "10.35"
+  },
+  {
+    "cropname": "Ragi",
+    "statename": "Kerala",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "0"
+  },
+  {
+    "cropname": "Ragi",
+    "statename": "Tamil Nadu",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "2.44"
+  },
+  {
+    "cropname": "Ragi",
+    "statename": "Puducherry",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "0"
+  },
+  {
+    "cropname": "Ragi",
+    "statename": "Dadra And Nagar Haveli",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "0.01"
+  },
+  {
+    "cropname": "Moong",
+    "statename": "Jammu And Kashmir",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "0"
+  },
+  {
+    "cropname": "Moong",
+    "statename": "Himachal Pradesh",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "0"
+  },
+  {
+    "cropname": "Moong",
+    "statename": "Punjab",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "0.65"
+  },
+  {
+    "cropname": "Moong",
+    "statename": "Haryana",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "0.22"
+  },
+  {
+    "cropname": "Moong",
+    "statename": "Rajasthan",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "8.18"
+  },
+  {
+    "cropname": "Moong",
+    "statename": "Uttar Pradesh",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "0.69"
+  },
+  {
+    "cropname": "Moong",
+    "statename": "Bihar",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "1.18"
+  },
+  {
+    "cropname": "Moong",
+    "statename": "Arunachal Pradesh",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "0.01"
+  },
+  {
+    "cropname": "Moong",
+    "statename": "Nagaland",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "0.01"
+  },
+  {
+    "cropname": "Moong",
+    "statename": "Manipur",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "0"
+  },
+  {
+    "cropname": "Moong",
+    "statename": "Tripura",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "0.01"
+  },
+  {
+    "cropname": "Moong",
+    "statename": "Assam",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "0.15"
+  },
+  {
+    "cropname": "Moong",
+    "statename": "West Bengal",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "0.58"
+  },
+  {
+    "cropname": "Moong",
+    "statename": "Jharkhand",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "0.2"
+  },
+  {
+    "cropname": "Moong",
+    "statename": "Odisha",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "1.22"
+  },
+  {
+    "cropname": "Moong",
+    "statename": "Chhattisgarh",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "0.01"
+  },
+  {
+    "cropname": "Moong",
+    "statename": "Madhya Pradesh",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "13.92"
+  },
+  {
+    "cropname": "Moong",
+    "statename": "Gujarat",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "1.1"
+  },
+  {
+    "cropname": "Moong",
+    "statename": "Maharashtra",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "0.76"
+  },
+  {
+    "cropname": "Moong",
+    "statename": "Andhra Pradesh",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "0.58"
+  },
+  {
+    "cropname": "Moong",
+    "statename": "Karnataka",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "0.94"
+  },
+  {
+    "cropname": "Moong",
+    "statename": "Kerala",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "0"
+  },
+  {
+    "cropname": "Moong",
+    "statename": "Tamil Nadu",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "0.42"
+  },
+  {
+    "cropname": "Moong",
+    "statename": "Puducherry",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "0"
+  },
+  {
+    "cropname": "Moong",
+    "statename": "Andaman And Nicobar Islands",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "0"
+  },
+  {
+    "cropname": "Moong",
+    "statename": "Telangana",
+    "cropyear": "2023-24",
+    "Production (Lakh Tonnes)": "0.21"
+  }
+]

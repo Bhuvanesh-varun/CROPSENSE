@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>{% block title %}CropSense{% endblock %}</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- App CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='assets/logo.png') }}">
+
+    {% block head_extra %}{% endblock %}
+
+    <style>
+        /* ===============================
+     AUTH GATE MODAL (AI LOCK)
+     =============================== */
+
+        .auth-gate-modal {
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+        }
+
+        .auth-gate-header {
+            background: linear-gradient(135deg, #2e7d32, #43a047);
+            color: #fff;
+        }
+
+        .auth-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 26px;
+        }
+
+        .auth-gate-modal .btn-success {
+            background-color: #2e7d32;
+            border-color: #2e7d32;
+        }
+
+        .auth-gate-modal .btn-success:hover {
+            background-color: #256628;
+            border-color: #256628;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- 🔐 GLOBAL LOGIN STATE (VERY IMPORTANT) -->
+    <script>
+        window.IS_LOGGED_IN = {{ 'true' if session.get('user_id') else 'false' }};
+    </script>
+
+
+    <!-- Navbar -->
+    {% if not hide_navbar %}
+        {% include "navbar.html" %}
+    {% endif %}
+
+    <!-- Page Content -->
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Divider -->
+    <div style="height:1px;background:linear-gradient(to right, transparent, #7dd957, transparent)"></div>
+
+    <!-- Footer -->
+    {% if not hide_footer %}
+        {% include "footer.html" %}
+    {% endif %}
+
+    <!-- Core JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+        AOS.init({ duration: 700, once: true });
+    </script>
+
+    {% block body_extra %}{% endblock %}
+
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+
+
+    <!-- smart scroll JS for NAVBAR   -->
+
+    <script>
+        (function () {
+            const navbar = document.querySelector(".navbar");
+            if (!navbar) return;
+
+            let lastScroll = window.scrollY;
+            let ticking = false;
+
+            window.addEventListener("scroll", () => {
+                if (!ticking) {
+                    window.requestAnimationFrame(() => {
+                        const currentScroll = window.scrollY;
+
+                        if (currentScroll > lastScroll && currentScroll > 120) {
+                            // scrolling down
+                            navbar.classList.add("nav-hidden");
+                            navbar.classList.remove("nav-visible");
+                        } else {
+                            // scrolling up (even slightly)
+                            navbar.classList.remove("nav-hidden");
+                            navbar.classList.add("nav-visible");
+                        }
+
+                        lastScroll = currentScroll;
+                        ticking = false;
+                    });
+
+                    ticking = true;
+                }
+            });
+        })();
+    </script>
+
+
+</body>
+
+</html>

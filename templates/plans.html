@@ -1,0 +1,381 @@
+{% extends "base.html" %}
+{% block title %}Our Plans{% endblock %}
+
+{% block content %}
+
+<div class="plans-page">
+
+    <!-- LOGIN NOTICE -->
+    {% if not user %}
+    <div class="login-alert">
+        🔐 Login to view your usage and activate plans
+    </div>
+    {% endif %}
+
+    <!-- FREE TRIAL (FULL WIDTH LIKE PLANS) -->
+    <div class="trial-wrapper">
+        <div class="trial-box">
+            <h5>🎁 Free Trial</h5>
+            <p>
+                {% if user %}
+                <strong>{{ user.quota.total - user.quota.used }}</strong> runs left out of {{ user.quota.total }}
+                {% else %}
+                3 free runs available after login
+                {% endif %}
+            </p>
+        </div>
+    </div>
+
+    <!-- PLANS -->
+    <div class="plans-grid">
+
+        <!-- SINGLE -->
+        {% set disabled_single = user and user.plan == "single" %}
+        <div class="plan-card {{ 'disabled' if disabled_single }}"
+            onclick="selectPlan('single', {{ disabled_single | lower }}, this)">
+            <h4>Single Run</h4>
+            <div class="price">₹9</div>
+            <p class="subtitle">One-time AI analysis</p>
+
+            <ul>
+                <li>✔ 1 AI prediction</li>
+                <li>✖ No history</li>
+            </ul>
+
+            {% if user %}
+            <div class="remaining">
+                {{ user.quota.total - user.quota.used }} runs left
+            </div>
+            {% endif %}
+        </div>
+
+        <!-- STARTER -->
+        {% set disabled_starter = user and user.plan == "starter" %}
+        <div class="plan-card popular {{ 'disabled' if disabled_starter }}"
+            onclick="selectPlan('starter', {{ disabled_starter | lower }}, this)">
+            <span class="badge">Most Popular</span>
+            <h4>Starter</h4>
+            <div class="price">₹49</div>
+            <p class="subtitle">Perfect for scholars</p>
+
+            <ul>
+                <li>✔ 10 AI runs</li>
+                <li>✔ History access</li>
+                <li>✔ Dashboard</li>
+            </ul>
+
+            {% if user %}
+            <div class="remaining">
+                {{ user.quota.total - user.quota.used }} runs left
+            </div>
+            {% endif %}
+        </div>
+
+        <!-- PRO -->
+        {% set disabled_pro = user and user.plan == "pro" %}
+        <div class="plan-card {{ 'disabled' if disabled_pro }}"
+            onclick="selectPlan('pro', {{ disabled_pro | lower }}, this)">
+            <h4>Pro</h4>
+            <div class="price">₹99</div>
+            <p class="subtitle">For researchers</p>
+
+            <ul>
+                <li>✔ 20 AI runs</li>
+                <li>✔ Full history</li>
+                <li>✔ Dashboard</li>
+                <li>✔ Priority access</li>
+            </ul>
+
+            {% if user %}
+            <div class="remaining">
+                {{ user.quota.total - user.quota.used }} runs left
+            </div>
+            {% endif %}
+        </div>
+
+    </div>
+
+    <!-- PAY -->
+    <div id="paySection" class="pay-box hidden">
+        <button class="btn-pay" onclick="payNow()">Proceed to Pay</button>
+    </div>
+
+</div>
+
+<!-- SUCCESS MODAL -->
+<div class="modal fade" id="paymentSuccessModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content success-modal">
+            <div class="success-icon">✔</div>
+
+            <h4 class="fw-bold text-success mt-3">Payment Successful</h4>
+
+            <p class="mb-1 fw-semibold" id="successPlanText">
+                Your plan has been activated
+            </p>
+
+            <p class="text-muted mb-3" id="successQuotaText">
+                Runs have been added to your account
+            </p>
+
+            <div class="spinner-border text-success spinner-sm"></div>
+
+            <p class="small text-muted mt-3">
+                Redirecting to Our AI…
+            </p>
+        </div>
+
+    </div>
+</div>
+
+<!-- ================= STYLES ================= -->
+<style>
+    .plans-page {
+        background: linear-gradient(#f4fbf6, #ffffff);
+        min-height: 100vh;
+        padding: 60px 20px
+    }
+
+    .login-alert {
+        background: #fff3cd;
+        padding: 14px;
+        border-radius: 10px;
+        text-align: center;
+        margin-bottom: 30px
+    }
+
+    /* FREE TRIAL FULL WIDTH */
+    .trial-wrapper {
+        max-width: 1000px;
+        margin: 0 auto 50px
+    }
+
+    .trial-box {
+        background: #e8f5e9;
+        padding: 26px;
+        border-radius: 16px;
+        text-align: center;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, .08)
+    }
+
+    /* PLANS GRID */
+    .plans-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 30px;
+        max-width: 1000px;
+        margin: auto
+    }
+
+    /* PLAN CARD */
+    .plan-card {
+        background: #fff;
+        border-radius: 18px;
+        padding: 32px;
+        cursor: pointer;
+        transition: all .35s ease;
+        border: 2px solid transparent;
+        position: relative;
+        box-shadow: 0 15px 40px rgba(0, 0, 0, .08)
+    }
+
+    /* HOVER GLOW */
+    .plan-card:hover {
+        transform: translateY(-10px);
+        box-shadow:
+            0 25px 60px rgba(0, 0, 0, .15),
+            0 0 0 4px rgba(46, 125, 50, .08)
+    }
+
+    /* SELECTED GLOW */
+    .plan-card.selected {
+        border-color: #2e7d32;
+        box-shadow:
+            0 0 0 5px rgba(46, 125, 50, .18),
+            0 30px 70px rgba(0, 0, 0, .18)
+    }
+
+    .plan-card.disabled {
+        opacity: .45;
+        pointer-events: none
+    }
+
+    .plan-card h4 {
+        font-weight: 700
+    }
+
+    .price {
+        font-size: 38px;
+        font-weight: 800;
+        color: #2e7d32
+    }
+
+    .subtitle {
+        color: #666;
+        margin-bottom: 16px
+    }
+
+    .plan-card ul {
+        padding: 0;
+        list-style: none
+    }
+
+    .plan-card li {
+        margin-bottom: 10px
+    }
+
+    .remaining {
+        margin-top: 15px;
+        font-size: 13px;
+        color: #2e7d32;
+        font-weight: 600
+    }
+
+    .badge {
+        position: absolute;
+        top: -12px;
+        right: 18px;
+        background: #2e7d32;
+        color: #fff;
+        font-size: 12px;
+        padding: 6px 14px;
+        border-radius: 20px
+    }
+
+    /* PAY SECTION SLIDE */
+    .pay-box {
+        text-align: center;
+        margin-top: 60px;
+        opacity: 1;
+        transition: all .5s ease
+    }
+
+    .pay-box.hidden {
+        opacity: 0;
+        transform: translateY(40px);
+        pointer-events: none
+    }
+
+    .btn-pay {
+        background: #2e7d32;
+        color: #fff;
+        padding: 16px 50px;
+        font-size: 18px;
+        border-radius: 50px;
+        border: none
+    }
+
+    .success-modal {
+        padding: 40px;
+        border-radius: 18px;
+        text-align: center;
+        animation: popIn .5s ease;
+    }
+
+    .success-icon {
+        width: 64px;
+        height: 64px;
+        background: #e8f5e9;
+        color: #2e7d32;
+        font-size: 36px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: auto;
+    }
+
+    @keyframes popIn {
+        from {
+            transform: scale(.85);
+            opacity: 0;
+        }
+
+        to {
+            transform: scale(1);
+            opacity: 1;
+        }
+    }
+</style>
+
+<!-- ================= SCRIPTS ================= -->
+<script>
+    let selectedPlan = null;
+
+    function selectPlan(plan, disabled, el) {
+        if (disabled) return;
+
+        selectedPlan = plan;
+
+        document.querySelectorAll(".plan-card")
+            .forEach(c => c.classList.remove("selected"));
+
+        el.classList.add("selected");
+
+        const payBox = document.getElementById("paySection");
+        payBox.classList.remove("hidden");
+        payBox.scrollIntoView({ behavior: "smooth" });
+    }
+
+
+    function payNow() {
+        {% if not user %}
+        window.location.href = "{{ url_for('login') }}";
+        return;
+        {% endif %}
+
+        fetch("/create_order", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ plan: selectedPlan })
+        })
+            .then(r => r.json())
+            .then(data => {
+                new Razorpay({
+                    key: data.key_id,
+                    amount: data.order.amount,
+                    currency: "INR",
+                    order_id: data.order.id,
+                    handler: function (resp) {
+                        fetch("/verify_payment", {
+                            method: "POST",
+                            headers: { "Content-Type": "application/json" },
+                            body: JSON.stringify({
+                                razorpay_order_id: resp.razorpay_order_id,
+                                razorpay_payment_id: resp.razorpay_payment_id,
+                                razorpay_signature: resp.razorpay_signature,
+                                plan: selectedPlan
+                            })
+                        }).then(() => {
+
+                            // Dynamic success text
+                            const planMap = {
+                                single: "Single Run Plan",
+                                starter: "Starter Plan (10 Runs)",
+                                pro: "Pro Plan (20 Runs)"
+                            };
+
+                            document.getElementById("successPlanText").innerText =
+                                planMap[selectedPlan] + " activated";
+
+                            document.getElementById("successQuotaText").innerText =
+                                "Runs have been successfully added to your account";
+
+                            new bootstrap.Modal(
+                                document.getElementById("paymentSuccessModal")
+                            ).show();
+
+                            setTimeout(() => {
+                                window.location.href = "/recommendations?fresh=1";
+                            }, 2600);
+                        });
+                    }
+
+                }).open();
+            });
+    }
+</script>
+
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+{% endblock %}

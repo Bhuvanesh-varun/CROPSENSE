@@ -1,0 +1,126 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+<div class="modal fade" id="loginErrorModal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content p-3">
+      <div class="modal-header">
+        <h5 class="modal-title text-danger fw-bold">Login Failed</h5>
+        <button class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <p>{{ messages[0] }}</p>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+{% endif %}
+{% endwith %}
+
+<!-- ===================== VIDEO BANNER ===================== -->
+<div class="video-banner" data-aos="fade-up">
+  <video playsinline autoplay muted loop>
+    <source src="{{ url_for('static', filename='assets/bannervideo.mp4') }}">
+  </video>
+
+  <div class="video-caption text-center">
+    <h1 class="display-1 fw-bolder text-white mb-3">
+      Where Innovation <br> Meets Cultivation
+    </h1> 
+    <div class="mt-4">
+      <p class="text-white">
+        Agriculture today blends technology with tradition and intelligent <br>
+        models to create productive and climate-resillent farming systems.
+      </p>
+    </div>
+  </div> 
+</div>
+
+<!-- ===================== FOUNDATION SECTION ===================== -->
+<section data-aos="fade-up">
+  <div class="container foundation-sec bg-white rounded-4 py-5 my-5">
+    <div class="row align-items-center">
+      <div class="col-sm-12 col-md-6 mb-4">
+        <img
+          src="{{ url_for('static', filename='assets/landingpage.jpg') }}"
+          alt="Indoor Farming Setup"
+          class="img-fluid rounded-4"
+          width="100%"
+        >
+      </div>
+
+      <div class="col-sm-12 col-md-6 ps-lg-5">
+        <h2 class="fw-bold mb-4 text-success">
+          Foundation in Sustainable Agriculture
+        </h2>
+        <p>
+          Agriculture is the indispensable foundation of human civilization,
+          encompassing the art and science of cultivating the soil, growing crops,
+          and raising livestock to provide food, fiber, and essential raw materials.
+          Far more than just a source of sustenance, modern agriculture is a complex,
+          technologically-driven global industry that balances economic productivity
+          with ecological stewardship.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== MAP SECTION ===================== -->
+<section class="my-5" data-aos="fade-up">
+  <div class="map-container container p-4 rounded-4 bg-white">
+    <div class="row">
+      <div class="col-sm-12 col-md-7">
+        <div class="visualization-area w-100">
+          <div class="controls">
+            <label for="crop-select">Select Crop:</label>
+            <select id="crop-select"></select>
+          </div>
+
+          <div class="map-and-legend-container w-100 pb-4">
+            <svg id="map"></svg>
+
+            <div id="top-producers">
+              <h3 class="fs-5 border-bottom pb-1 mb-1">
+                Top 5 Producers for <span id="current-crop"></span>
+              </h3>
+              <ul id="top-list"></ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-12 col-md-5">
+        <ul class="my-5 map-text">
+          <li><strong>Geographic Production View:</strong> Instantly shows crop production distribution across India.</li>
+          <li><strong>State Dominance:</strong> Identifies leading producer states.</li>
+          <li><strong>Dynamic Comparison:</strong> Switch crops dynamically.</li>
+          <li><strong>Effortless Analysis:</strong> Visual regional comparison.</li>
+          <li><strong>Top Producers:</strong> Highlights top 5 producing states.</li>
+          <li><strong>Supply Chain Insight:</strong> Reveals critical regions.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
+
+{% block body_extra %}
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="{{ url_for('static', filename='mapscript.js') }}"></script>
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+<script>
+  AOS.init();
+</script>
+{% endblock %}

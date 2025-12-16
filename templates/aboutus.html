@@ -1,0 +1,149 @@
+{% extends "base.html" %}
+
+{% block title %}About Us{% endblock %}
+
+{% block content %}
+
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+<div class="modal fade" id="loginErrorModal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content p-3">
+      <div class="modal-header">
+        <h5 class="modal-title text-danger fw-bold">Login Failed</h5>
+        <button class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <p>{{ messages[0] }}</p>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+{% endif %}
+{% endwith %}
+
+<!-- ===================== ABOUT US SECTION ===================== -->
+<section class="about-section my-5">
+
+  <!-- Vision & Mission -->
+  <section data-aos="fade-up">
+    <div class="container bg-white rounded-4">
+      <div class="row mb-5 py-3 align-items-center">
+        <div class="col-sm-12 col-md-6 mb-4">
+          <img
+            src="{{ url_for('static', filename='assets/about1.jpg') }}"
+            alt="Indoor Farming Setup"
+            class="w-100 rounded-4"
+          >
+        </div>
+        <div class="col-sm-12 col-md-6 ps-lg-5">
+          <h2 class="fw-bold mb-4 text-success pb-2 mt-2">
+            Vision and Mission
+          </h2>
+          <p>
+            CropSense was founded on the belief that technology can revolutionize
+            farming to feed a growing world. Our mission is to empower farmers,
+            from smallholder operations to large commercial enterprises, with
+            actionable, precise data that transforms uncertainty into predictable
+            success. We strive to be the leading partner in agricultural innovation,
+            ensuring every decision made on the farm is backed by smart prediction,
+            fostering a more sustainable, efficient, and profitable future.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technology -->
+  <section data-aos="fade-up">
+    <div class="container bg-white rounded-4">
+      <div class="row mb-5 py-3 align-items-center">
+        <div class="col-sm-12 col-md-6 order-md-1 order-2 pe-lg-5">
+          <h2 class="fw-bold mb-4 text-success pb-2 mt-2">
+            The CropSense Technology
+          </h2>
+          <p>
+            At the heart of our system lies proprietary technology combining
+            IoT-driven data collection with sophisticated machine learning
+            algorithms. We ingest satellite imagery, hyper-local weather data,
+            and soil analysis to build dynamic predictive models that diagnose
+            deficiencies and stress before visible damage occurs.
+          </p>
+        </div>
+        <div class="col-sm-12 col-md-6 mb-4 order-md-2 order-1">
+          <img
+            src="{{ url_for('static', filename='assets/about2 .jpg') }}"
+            alt="Farm Technology"
+            class="w-100 rounded-4"
+          >
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Smart Prediction -->
+  <section data-aos="fade-up">
+    <div class="container bg-white rounded-4">
+      <div class="row mb-5 py-3 align-items-center">
+        <div class="col-sm-12 col-md-6 mb-4">
+          <img
+            src="{{ url_for('static', filename='assets/about3.jpg') }}"
+            alt="Smart Prediction"
+            class="w-100 rounded-4"
+          >
+        </div>
+        <div class="col-sm-12 col-md-6 ps-lg-5">
+          <h2 class="fw-bold mb-4 text-success pb-2 mt-2">
+            Smart Prediction and Prescription
+          </h2>
+          <p>
+            CropSense integrates predictive analytics with prescriptive
+            recommendations. We simulate multiple scenarios to provide the
+            single best action plan for fertilizers, irrigation, and treatments.
+            This precision reduces waste, lowers cost, and maximizes yield.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Commitment -->
+  <section data-aos="fade-up">
+    <div class="container bg-white rounded-4">
+      <div class="row mb-5 py-3 align-items-center">
+        <div class="col-sm-12 col-md-6 order-md-1 order-2 pe-lg-5">
+          <h2 class="fw-bold mb-4 text-success pb-2 mt-2">
+            Commitment to the Farmer
+          </h2>
+          <p>
+            Our system is intuitive, accessible, and designed around real farmer
+            workflows. Beyond software, CropSense provides continuous improvement
+            and dedicated support, ensuring technology truly serves agriculture.
+          </p>
+        </div>
+        <div class="col-sm-12 col-md-6 mb-4 order-md-2 order-1">
+          <img
+            src="{{ url_for('static', filename='assets/about4.jpg') }}"
+            alt="Farmer Support"
+            class="w-100 rounded-4"
+          >
+        </div>
+      </div>
+    </div>
+  </section>
+
+</section>
+
+{% endblock %}
+
+{% block body_extra %}
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<script>
+  AOS.init();
+</script>
+{% endblock %}

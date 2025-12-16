@@ -1,0 +1,74 @@
+# ----------------------------------------------------
+# Python & Flask project .gitignore
+# ----------------------------------------------------
+
+# Byte-compiled / cached files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pdb
+# *.pkl
+# *.pickle
+
+# Virtual environment folders
+env/
+venv/
+ENV/
+.venv/
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Logs
+*.log
+
+# Local environment/config files
+cropsense-firebase-adminsdk.json
+.env
+.env.*
+*.config
+config.json
+
+# VS Code settings
+.vscode/
+
+# Render build cache (just in case)
+.render/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Python history & cache
+.python_history
+
+# Server-side cache
+instance/
+
+# Compiled model or temp files
+models/*.tmp
+models/*.bak
+
+# Pip
+pip-log.txt
+
+# Coverage/testing
+htmlcov/
+.coverage
+.tox/
+.nox/
+
+# Node (if ever used)
+node_modules/
+
+# Misc
+*.swp
+*.swo
+~$*

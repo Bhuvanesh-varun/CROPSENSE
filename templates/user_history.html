@@ -1,0 +1,234 @@
+{% extends "base.html" %}
+{% set hide_navbar = True %}
+{% set hide_footer = True %}
+
+{% block content %}
+
+<div class="dashboard-wrapper">
+
+    <!-- ========== SIDEBAR ========== -->
+    <aside class="dashboard-sidebar">
+
+        <div class="sidebar-brand">CropSense</div>
+
+        <ul class="sidebar-menu">
+            <li>
+                <a href="{{ url_for('index') }}">
+                    <i class="bi bi-house"></i> Home
+                </a>
+            </li>
+
+            <li>
+                <a href="{{ url_for('recommendations') }}?fresh=1">
+                    <i class="bi bi-cpu"></i> Our AI
+                </a>
+            </li>
+
+            <li class="active">
+                <a href="{{ url_for('my_history') }}">
+                    <i class="bi bi-clock-history"></i> My History
+                </a>
+            </li>
+
+            <li>
+                <a href="#" style="opacity:.6; pointer-events:none">
+                    <i class="bi bi-person"></i> Profile
+                    <span class="badge bg-secondary ms-auto">Soon</span>
+                </a>
+            </li>
+        </ul>
+
+        <div class="sidebar-footer">
+            <a href="{{ url_for('logout') }}">
+                <i class="bi bi-box-arrow-right"></i> Logout
+            </a>
+        </div>
+
+    </aside>
+
+    <!-- ========== CONTENT ========== -->
+    <main class="dashboard-content">
+
+        <!-- HEADER -->
+        <div class="dashboard-header">
+
+            <div>
+                <h3 class="fw-bold mb-1">My Previous AI Predictions</h3>
+                <p class="text-muted mb-0">
+                    Showing all your crop analysis history with a clear view.
+                </p>
+            </div>
+
+            <div class="header-actions">
+
+                <!-- FILTER DROPDOWN -->
+                <div class="dropdown">
+                    <button class="btn btn-light border d-flex align-items-center gap-2" data-bs-toggle="dropdown">
+                        <i class="bi bi-funnel"></i>
+                        <span>Filter</span>
+                        <i class="bi bi-chevron-down small"></i>
+                    </button>
+
+                    <ul class="dropdown-menu dropdown-menu-end shadow">
+                        <li>
+                            <a class="dropdown-item" href="#" onclick="sortHistory('new')">
+                                <i class="bi bi-sort-down me-2"></i> Newest first
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="#" onclick="sortHistory('old')">
+                                <i class="bi bi-sort-up me-2"></i> Oldest first
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- SEARCH ICON -->
+                <button class="btn btn-light border" onclick="toggleSearch()" title="Search by crop">
+                    <i class="bi bi-search"></i>
+                </button>
+
+                <!-- SEARCH INPUT (HIDDEN) -->
+                <input type="text" id="historySearch" class="form-control d-none" placeholder="Search crop name..."
+                    onkeyup="filterByCrop()" style="max-width:200px">
+
+                <!-- PROFILE AVATAR -->
+                {% if session.get('user') %}
+                {% set first_letter = session['user'][0]|upper %}
+                <div class="dropdown">
+                    <button class="profile-avatar" data-bs-toggle="dropdown">
+                        {{ first_letter }}
+                    </button>
+
+                    <ul class="dropdown-menu dropdown-menu-end shadow">
+                        <li class="dropdown-header fw-semibold">
+                            {{ session.get('user') }}
+                        </li>
+
+                        <li>
+                            <a class="dropdown-item" href="#">
+                                Profile (Coming Soon)
+                            </a>
+                        </li>
+
+                        <li>
+                            <a class="dropdown-item" href="{{ url_for('my_history') }}">
+                                My History
+                            </a>
+                        </li>
+
+                        {% if session.get('role') == 'admin' %}
+                        <li>
+                            <a class="dropdown-item text-warning" href="{{ url_for('admin_dashboard') }}">
+                                Admin Dashboard
+                            </a>
+                        </li>
+                        {% endif %}
+
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+
+                        <li>
+                            <a class="dropdown-item text-danger" href="{{ url_for('logout') }}">
+                                Logout
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                {% endif %}
+
+            </div>
+
+
+        </div>
+
+        {% if history %}
+        <div class="row g-4">
+
+            {% for h in history %}
+            <div class="col-lg-4 col-md-6">
+
+                <div class="history-card"
+
+                    data-crop="{{ h.crop | lower }}"
+                    data-time="{{ h.timestamp }}">
+
+                    <div class="d-flex justify-content-between mb-3">
+                        <span class="kpi-pill kpi-crop">
+                            {{ h.crop }}
+                        </span>
+                        <span class="history-meta">{{ h.timestamp }}</span>
+                    </div>
+
+                    <div class="mb-3">
+                        <span class="kpi-pill kpi-sqi">SQI: {{ h.sqi }}</span>
+                        <span class="kpi-pill kpi-phi">PHI: {{ h.phi }}</span>
+                    </div>
+
+                    <div class="d-flex gap-2">
+                        <a href="{{ url_for('view_prediction', prediction_id=h.id) }}"
+                            class="btn btn-sm btn-success">View</a>
+
+                        <a href="{{ url_for('download_prediction', prediction_id=h.id) }}"
+                            class="btn btn-sm btn-outline-success">PDF</a>
+
+                        <form method="POST" action="{{ url_for('delete_prediction', prediction_id=h.id) }}"
+                            onsubmit="return confirm('Delete this prediction?')">
+                            <button class="btn btn-sm btn-outline-danger">Delete</button>
+                        </form>
+                    </div>
+
+                </div>
+
+            </div>
+            {% endfor %}
+
+        </div>
+        {% else %}
+        <p class="text-muted">No previous predictions found.</p>
+        {% endif %}
+
+    </main>
+
+</div>
+
+<script>
+/* Toggle search input */
+function toggleSearch() {
+  const input = document.getElementById("historySearch");
+  input.classList.toggle("d-none");
+  input.focus();
+}
+
+/* Filter by crop name */
+function filterByCrop() {
+  const query = document.getElementById("historySearch").value.toLowerCase();
+  document.querySelectorAll(".history-card").forEach(card => {
+    const crop = card.dataset.crop || "";
+    card.parentElement.style.display =
+      crop.includes(query) ? "" : "none";
+  });
+}
+
+/* Sort by time */
+function sortHistory(order) {
+  const container = document.querySelector(".row.g-4");
+  const cards = Array.from(container.children);
+
+  cards.sort((a, b) => {
+    const t1 = new Date(
+      a.querySelector(".history-card").dataset.time
+    );
+    const t2 = new Date(
+      b.querySelector(".history-card").dataset.time
+    );
+    return order === "new" ? t2 - t1 : t1 - t2;
+  });
+
+  cards.forEach(card => container.appendChild(card));
+}
+</script>
+
+
+{% endblock %}

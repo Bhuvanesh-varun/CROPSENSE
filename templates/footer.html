@@ -1,0 +1,48 @@
+<footer class="footer p-3">
+  <div class="container mt-4">
+    <div class="row gy-3">
+
+      <div class="col-md-3">
+        <h1 class="fs-3">CROPSENSE</h1>
+        <img src="{{ url_for('static', filename='assets/logo.png') }}" width="150" height="150">
+      </div>
+
+      <div class="col-md-3">
+        <h3 class="footer-tittle">Navigation</h3>
+        <ul class="list-unstyled">
+          <li><a href="{{ url_for('index') }}" class="footer-link">Home</a></li>
+          <li><a href="{{ url_for('recommendations') }}" class="footer-link">Our AI</a></li>
+          <li><a href="{{ url_for('about_us') }}" class="footer-link">About Us</a></li>
+          <li><a href="{{ url_for('contact_us') }}" class="footer-link">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <div class="col-md-3">
+        <h3 class="footer-tittle">Our Address</h3>
+        <ul class="list-unstyled">
+          <li><i class="bi bi-geo-alt-fill me-2"></i>KPHB Colony, Hyderabad, India</li>
+          <li><i class="bi bi-telephone-fill me-2"></i>+91 50044-55-900</li>
+          <li><i class="bi bi-envelope-fill me-2"></i>cropsense@help.us</li>
+        </ul>
+      </div>
+
+      <div class="col-md-3">
+        <h3 class="footer-tittle">Connect With Us</h3>
+        <div class="social-icons mb-3">
+          <a href="#"><i class="bi bi-facebook"></i></a>
+          <a href="#"><i class="bi bi-twitter"></i></a>
+          <a href="#"><i class="bi bi-linkedin"></i></a>
+          <a href="#"><i class="bi bi-instagram"></i></a>
+        </div>
+        <a href="{{ url_for('contact_us') }}" class="contact-btn-footer">Contact Us</a>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="container-fluid p-3 border-top mt-4">
+    <h4 class="lead text-center">
+      © 2025 CROPSENSE. All Rights Reserved
+    </h4>
+  </div>
+</footer>

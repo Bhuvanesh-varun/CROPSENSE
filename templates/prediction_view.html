@@ -1,0 +1,104 @@
+{% extends "base.html" %}
+{% set hide_navbar = True %}
+{% set hide_footer = True %}
+
+{% block content %}
+
+<div class="dashboard-wrapper">
+
+    <!-- ========== SIDEBAR ========== -->
+    <aside class="dashboard-sidebar">
+
+        <div class="sidebar-brand">CropSense</div>
+
+        <ul class="sidebar-menu">
+            <li>
+                <a href="{{ url_for('index') }}">
+                    <i class="bi bi-house"></i> Home
+                </a>
+            </li>
+
+            <li>
+                <a href="{{ url_for('recommendations') }}">
+                    <i class="bi bi-cpu"></i> Our AI
+                </a>
+            </li>
+
+            <li class="active">
+                <a href="{{ url_for('my_history') }}">
+                    <i class="bi bi-clock-history"></i> My History
+                </a>
+            </li>
+
+            <li>
+                <a href="#" style="opacity:.6; pointer-events:none">
+                    <i class="bi bi-person"></i> Profile
+                    <span class="badge bg-secondary ms-auto">Soon</span>
+                </a>
+            </li>
+        </ul>
+
+        <div class="sidebar-footer">
+            <a href="{{ url_for('logout') }}">
+                <i class="bi bi-box-arrow-right"></i> Logout
+            </a>
+        </div>
+
+    </aside>
+    
+    <!-- ========== CONTENT ========== -->
+
+  <main class="dashboard-content">
+
+    <!-- HEADER -->
+    <div class="dashboard-header d-flex justify-content-between align-items-center">
+      <h3 class="fw-bold">AI Prediction Result</h3>
+      <a href="{{ url_for('my_history') }}" class="btn btn-outline-success">
+        ← Back to History
+      </a>
+    </div>
+
+    <!-- KPI CARDS -->
+    <div class="row g-4 mb-4">
+      <div class="col-md-6">
+        <div class="kpi-card">
+          <div class="kpi-title">Soil Quality Index</div>
+          <div class="kpi-value">{{ prediction.sqi }}</div>
+          <div class="kpi-badge">{{ prediction.sqi_class }}</div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="kpi-card">
+          <div class="kpi-title">Crop Health Index</div>
+          <div class="kpi-value">{{ prediction.phi }}</div>
+          <div class="kpi-badge">{{ prediction.phi_class }}</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- INPUTS + OUTPUT -->
+    <div class="row g-4">
+      <div class="col-md-5">
+        <div class="card p-4 shadow rounded-4">
+          <h5 class="fw-bold mb-3">Summary of Inputs</h5>
+          <pre class="bg-light p-3 rounded small">{{ prediction.inputs | tojson(indent=2) }}</pre>
+        </div>
+      </div>
+
+      <div class="col-md-7">
+        <div class="card shadow-lg rounded-4 border-0 h-100">
+          <div class="card-header bg-white border-0">
+            <h5 class="fw-bold text-success mb-1">Recommendations</h5>
+            <p class="text-muted small">AI-powered crop guidance</p>
+          </div>
+          <div class="card-body">
+            {{ prediction.plan_html | safe }}
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+{% endblock %}

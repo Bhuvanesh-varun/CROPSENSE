@@ -1,0 +1,646 @@
+<div id="aiFormOverlay" class="ai-form-overlay d-none">
+  <div class="ai-form-panel">
+
+    <!-- HEADER -->
+    <div class="d-flex justify-content-between align-items-center mb-3">
+      <h2 class="me-3">
+        STEP - <span id="curStepNum">1</span>/7
+      </h2>
+      <button id="closeFormBtn" class="btn btn-outline-secondary btn-sm">
+        Close
+      </button>
+    </div>
+
+    <!-- PROGRESS -->
+    <div class="progress mb-3" style="height:10px">
+      <div id="progressBar" class="progress-bar bg-success" style="width:12.5%"></div>
+    </div>
+
+    <!-- STEPS -->
+    <div id="formStepsContainer" class="position-relative">
+            <!-- 🔥 ALL YOUR STEPS (1–8)  -->
+            <!-- STEP 1 -->
+            <div id="step1" class="step-card active">
+
+                <h4 class="question-title">Select your crop</h4>
+                <div class="row selection-grid">
+                    <div class="col-4 col-sm-6 col-md-2 col-lg-2 mb-3">
+                        <div class="img-selection" data-field="crop" data-value="rice">
+                            <img src="{{ url_for('static', filename='assets/rice.jpg') }}" alt="Rice">
+                            <div class="img-selection-label">Rice</div>
+                        </div>
+                    </div>
+                    <div class="col-4 col-sm-6 col-md-2 col-lg-2 mb-3">
+                        <div class="img-selection" data-field="crop" data-value="wheat">
+                            <img src="{{ url_for('static', filename='assets/wheat.jpg') }}" alt="Wheat">
+                            <div class="img-selection-label">Wheat</div>
+                        </div>
+                    </div>
+                    <div class="col-4 col-sm-6 col-md-2 col-lg-2 mb-3">
+                        <div class="img-selection" data-field="crop" data-value="maize">
+                            <img src="{{ url_for('static', filename='assets/maize.jpg') }}" alt="Maize">
+                            <div class="img-selection-label">Maize</div>
+                        </div>
+                    </div>
+
+                    <div class="col-4 col-sm-6 col-md-2 col-lg-2 mb-3">
+                        <div class="img-selection" data-field="crop" data-value="cotton">
+                            <img src="{{ url_for('static', filename='assets/cotton.jpg') }}" alt="Cotton">
+                            <div class="img-selection-label">Cotton</div>
+                        </div>
+                    </div>
+                    <div class="col-4 col-sm-6 col-md-2 col-lg-2 mb-3">
+                        <div class="img-selection" data-field="crop" data-value="onion"><img
+                                src="{{ url_for('static', filename='assets/onion.jpg') }}" alt="Onion">
+                            <div class="img-selection-label">Onion</div>
+                        </div>
+                    </div>
+                    <div class="col-4 col-sm-6 col-md-2 col-lg-2 mb-3">
+                        <div class="img-selection" data-field="crop" data-value="barley"><img
+                                src="{{ url_for('static', filename='assets/barley.webp') }}" alt="Barley">
+                            <div class="img-selection-label">Barley</div>
+                        </div>
+                    </div>
+                    <div class="col-4 col-sm-6 col-md-2 col-lg-2 mb-3">
+                        <div class="img-selection" data-field="crop" data-value="soyabean"><img
+                                src="{{ url_for('static', filename='assets/soyabean.webp') }}" alt="Soybean">
+                            <div class="img-selection-label">Soybean</div>
+                        </div>
+                    </div>
+                    <div class="col-4 col-sm-6 col-md-2 col-lg-2 mb-3">
+                        <div class="img-selection" data-field="crop" data-value="turmeric"><img
+                                src="{{ url_for('static', filename='assets/turmeric.webp') }}" alt="Turmeric">
+                            <div class="img-selection-label">Turmeric</div>
+                        </div>
+                    </div>
+                    <div class="col-4 col-sm-6 col-md-2 col-lg-2 mb-3">
+                        <div class="img-selection" data-field="crop" data-value="ragi"><img
+                                src="{{ url_for('static', filename='assets/ragi.webp') }}" alt="Ragi">
+                            <div class="img-selection-label">Ragi</div>
+                        </div>
+                    </div>
+                    <div class="col-4 col-sm-6 col-md-2 col-lg-2 mb-3">
+                        <div class="img-selection" data-field="crop" data-value="jowar"><img
+                                src="{{ url_for('static', filename='assets/jowar.webp') }}" alt="Jowar">
+                            <div class="img-selection-label">Jowar</div>
+                        </div>
+                    </div>
+                    <div class="col-4 col-sm-6 col-md-2 col-lg-2 mb-3">
+                        <div class="img-selection" data-field="crop" data-value="bajra"><img
+                                src="{{ url_for('static', filename='assets/bajra.webp') }}" alt="Bajra">
+                            <div class="img-selection-label">Bajra</div>
+                        </div>
+                    </div>
+                    <div class="col-4 col-sm-6 col-md-2 col-lg-2 mb-3">
+                        <div class="img-selection" data-field="crop" data-value="green gram"><img
+                                src="{{ url_for('static', filename='assets/greengram.jpg') }}" alt="Greengram">
+                            <div class="img-selection-label">Greengram</div>
+                        </div>
+                    </div>
+                    <div class="col-4 col-sm-6 col-md-2 col-lg-2 mb-3">
+                        <div class="img-selection" data-field="crop" data-value="chana gram"><img
+                                src="{{ url_for('static', filename='assets/chana.jpg') }}" alt="Chana">
+                            <div class="img-selection-label">Chana</div>
+                        </div>
+                    </div>
+                    <div class="col-4 col-sm-6 col-md-2 col-lg-2 mb-3">
+                        <div class="img-selection" data-field="crop" data-value="mustard"><img
+                                src="{{ url_for('static', filename='assets/mustard.jpg') }}" alt="Mustard">
+                            <div class="img-selection-label">Mustard</div>
+                        </div>
+                    </div>
+                    <div class="col-4 col-sm-6 col-md-2 col-lg-2 mb-3">
+                        <div class="img-selection" data-field="crop" data-value="black gram"><img
+                                src="{{ url_for('static', filename='assets/blackgram.jpg') }}" alt="Blackgram">
+                            <div class="img-selection-label">Blackgram</div>
+                        </div>
+                    </div>
+                    <div class="col-4 col-sm-6 col-md-2 col-lg-2 mb-3">
+                        <div class="img-selection" data-field="crop" data-value="lobia"><img
+                                src="{{ url_for('static', filename='assets/lobia.jpg') }}" alt="Lobia">
+                            <div class="img-selection-label">Lobia</div>
+                        </div>
+                    </div>
+                    <div class="col-4 col-sm-6 col-md-2 col-lg-2 mb-3">
+                        <div class="img-selection" data-field="crop" data-value="lentils"><img
+                                src="{{ url_for('static', filename='assets/lentil.jpg') }}" alt="Lentil">
+                            <div class="img-selection-label">Lentil</div>
+                        </div>
+                    </div>
+                    <div class="col-4 col-sm-6 col-md-2 col-lg-2 mb-3">
+                        <div class="img-selection" data-field="crop" data-value="sunflower"><img
+                                src="{{ url_for('static', filename='assets/sunflower.webp') }}" alt="Sunflower">
+                            <div class="img-selection-label">Sunflower</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- STEP-2  -->
+            <div id="step2" class="step-card">
+
+                <h4 class="question-title">Select your Previous crop</h4>
+                <div class="row selection-grid">
+                    <!-- 18 example crops - use your asset filenames -->
+                    <!-- Repeat these blocks and update data-crop/name/asset as needed -->
+                    <div class="col-4 col-md-2 mb-3">
+                        <div class="img-selection" data-field="previousCrop" data-value="rice">
+                            <img src="{{ url_for('static', filename='assets/rice.jpg') }}" alt="Rice">
+                            <div class="img-selection-label">Rice</div>
+                        </div>
+                    </div>
+                    <div class="col-4 col-md-2 mb-3">
+                        <div class="img-selection" data-field="previousCrop" data-value="wheat">
+                            <img src="{{ url_for('static', filename='assets/wheat.jpg') }}" alt="Wheat">
+                            <div class="img-selection-label">Wheat</div>
+                        </div>
+                    </div>
+                    <div class="col-4 col-md-2 mb-3">
+                        <div class="img-selection" data-field="previousCrop" data-value="maize">
+                            <img src="{{ url_for('static', filename='assets/maize.jpg') }}" alt="Maize">
+                            <div class="img-selection-label">Maize</div>
+                        </div>
+                    </div>
+                    <!-- more crops (fill up to 18) -->
+                    <div class="col-4 col-md-2 mb-3">
+                        <div class="img-selection" data-field="previousCrop" data-value="cotton"><img
+                                src="{{ url_for('static', filename='assets/cotton.jpg') }}" alt="Cotton">
+                            <div class="img-selection-label">Cotton</div>
+                        </div>
+                    </div>
+                    <div class="col-4 col-md-2 mb-3">
+                        <div class="img-selection" data-field="previousCrop" data-value="onion"><img
+                                src="{{ url_for('static', filename='assets/onion.jpg') }}" alt="Onion">
+                            <div class="img-selection-label">Onion</div>
+                        </div>
+                    </div>
+                    <div class="col-4 col-md-2 mb-3">
+                        <div class="img-selection" data-field="previousCrop" data-value="barley"><img
+                                src="{{ url_for('static', filename='assets/barley.webp') }}" alt="Barley">
+                            <div class="img-selection-label">Barley</div>
+                        </div>
+                    </div>
+                    <div class="col-4 col-md-2 mb-3">
+                        <div class="img-selection" data-field="previousCrop" data-value="soyabean"><img
+                                src="{{ url_for('static', filename='assets/soyabean.webp') }}" alt="Soybean">
+                            <div class="img-selection-label">Soybean</div>
+                        </div>
+                    </div>
+                    <div class="col-4 col-md-2 mb-3">
+                        <div class="img-selection" data-field="previousCrop" data-value="turmeric"><img
+                                src="{{ url_for('static', filename='assets/turmeric.webp') }}" alt="Turmeric">
+                            <div class="img-selection-label">Turmeric</div>
+                        </div>
+                    </div>
+                    <div class="col-4 col-md-2 mb-3">
+                        <div class="img-selection" data-field="previousCrop" data-value="ragi"><img
+                                src="{{ url_for('static', filename='assets/ragi.webp') }}" alt="Ragi">
+                            <div class="img-selection-label">Ragi</div>
+                        </div>
+                    </div>
+                    <div class="col-4 col-md-2 mb-3">
+                        <div class="img-selection" data-field="previousCrop" data-value="jowar"><img
+                                src="{{ url_for('static', filename='assets/jowar.webp') }}" alt="Jowar">
+                            <div class="img-selection-label">Jowar</div>
+                        </div>
+                    </div>
+                    <div class="col-4 col-md-2 mb-3">
+                        <div class="img-selection" data-field="previousCrop" data-value="bajra"><img
+                                src="{{ url_for('static', filename='assets/bajra.webp') }}" alt="Bajra">
+                            <div class="img-selection-label">Bajra</div>
+                        </div>
+                    </div>
+                    <div class="col-4 col-md-2 mb-3">
+                        <div class="img-selection" data-field="previousCrop" data-value="green gram"><img
+                                src="{{ url_for('static', filename='assets/greengram.jpg') }}" alt="Greengram">
+                            <div class="img-selection-label">Greengram</div>
+                        </div>
+                    </div>
+                    <div class="col-4 col-md-2 mb-3">
+                        <div class="img-selection" data-field="previousCrop" data-value="chana gram"><img
+                                src="{{ url_for('static', filename='assets/chana.jpg') }}" alt="Chana">
+                            <div class="img-selection-label">Chana</div>
+                        </div>
+                    </div>
+                    <div class="col-4 col-md-2 mb-3">
+                        <div class="img-selection" data-field="previousCrop" data-value="mustard"><img
+                                src="{{ url_for('static', filename='assets/mustard.jpg') }}" alt="Mustard">
+                            <div class="img-selection-label">Mustard</div>
+                        </div>
+                    </div>
+                    <div class="col-4 col-md-2 mb-3">
+                        <div class="img-selection" data-field="previousCrop" data-value="black gram"><img
+                                src="{{ url_for('static', filename='assets/blackgram.jpg') }}" alt="Blackgram">
+                            <div class="img-selection-label">Blackgram</div>
+                        </div>
+                    </div>
+                    <div class="col-4 col-md-2 mb-3">
+                        <div class="img-selection" data-field="previousCrop" data-value="lobia"><img
+                                src="{{ url_for('static', filename='assets/lobia.jpg') }}" alt="Lobia">
+                            <div class="img-selection-label">Lobia</div>
+                        </div>
+                    </div>
+                    <div class="col-4 col-md-2 mb-3">
+                        <div class="img-selection" data-field="previousCrop" data-value="lentils"><img
+                                src="{{ url_for('static', filename='assets/lentil.jpg') }}" alt="Lentil">
+                            <div class="img-selection-label">Lentil</div>
+                        </div>
+                    </div>
+                    <div class="col-4 col-md-2 mb-3">
+                        <div class="img-selection" data-field="previousCrop" data-value="sunflower"><img
+                                src="{{ url_for('static', filename='assets/sunflower.webp') }}" alt="Sunflower">
+                            <div class="img-selection-label">Sunflower</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- STEP 3 -->
+            <div id="step3" class="step-card">
+
+                <div class="row">
+                    <div class="col-sm-12 col-md-12 col-lg-12">
+                        <h4>Select Soil type</h4>
+                        <div class="row selection-grid">
+                            <div class="col-4 col-md-2 mb-3">
+                                <div class="img-selection" data-field="soilType" data-value="alluvial"><img
+                                        src="{{ url_for('static', filename='assets/alluvialSoil.jpg') }}">
+                                    <div class="img-selection-label">Alluvial Soil</div>
+                                </div>
+                            </div>
+                            <div class="col-4 col-md-2 mb-3">
+                                <div class="img-selection" data-field="soilType" data-value="black soil"><img
+                                        src="{{ url_for('static', filename='assets/blacksoil.webp') }}">
+                                    <div class="img-selection-label">Black Soil</div>
+                                </div>
+                            </div>
+                            <div class="col-4 col-md-2 mb-3">
+                                <div class="img-selection" data-field="soilType" data-value="red soil"><img
+                                        src="{{ url_for('static', filename='assets/redSoil.jpg') }}">
+                                    <div class="img-selection-label">Red Soil</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 col-md-12 col-lg-12">
+                        <h4>Soil texture</h4>
+                        <div class="row selection-grid">
+                            <div class="col-4 col-md-2 mb-3">
+                                <div class="img-selection" data-field="soilTexture" data-value="sandy"><img
+                                        src="{{ url_for('static', filename='assets/sandy.jpg') }}">
+                                    <div class="img-selection-label">Sandy</div>
+                                </div>
+                            </div>
+                            <div class="col-4 col-md-2 mb-3">
+                                <div class="img-selection" data-field="soilTexture" data-value="loam"><img
+                                        src="{{ url_for('static', filename='assets/loamy.jpg') }}">
+                                    <div class="img-selection-label">Loam</div>
+                                </div>
+                            </div>
+                            <div class="col-4 col-md-2 mb-3">
+                                <div class="img-selection" data-field="soilTexture" data-value="clay"><img
+                                        src="{{ url_for('static', filename='assets/clay.jpg') }}">
+                                    <div class="img-selection-label">Clay</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- STEP 4 -->
+            <div id="step4" class="step-card">
+
+                <h4>Growth stage</h4>
+                <div class="row selection-grid">
+                    <div class="col-4 col-md-2 mb-3">
+                        <div class="img-selection" data-field="growthStage" data-value="germination/seedling"><img
+                                src="{{ url_for('static', filename='assets/germination.jpg') }}">
+                            <div class="img-selection-label">Germination</div>
+                        </div>
+                    </div>
+                    <div class="col-4 col-md-2 mb-3">
+                        <div class="img-selection" data-field="growthStage" data-value="vegetative"><img
+                                src="{{ url_for('static', filename='assets/vegetative.jpg') }}">
+                            <div class="img-selection-label">Vegetative</div>
+                        </div>
+                    </div>
+                    <div class="col-4 col-md-2 mb-3">
+                        <div class="img-selection" data-field="growthStage" data-value="flowering"><img
+                                src="{{ url_for('static', filename='assets/flowering.jpg') }}">
+                            <div class="img-selection-label">Flowering</div>
+                        </div>
+                    </div>
+                    <div class="col-4 col-md-2 mb-3">
+                        <div class="img-selection" data-field="growthStage" data-value="fruiting/grain fill"><img
+                                src="{{ url_for('static', filename='assets/fruiting.jpg') }}">
+                            <div class="img-selection-label">Fruiting</div>
+                        </div>
+                    </div>
+                    <div class="col-4 col-md-2 mb-3">
+                        <div class="img-selection" data-field="growthStage" data-value="maturity"><img
+                                src="{{ url_for('static', filename='assets/maturity.jpg') }}">
+                            <div class="img-selection-label">Maturity</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- STEP 5 -->
+            <div id="step5" class="step-card">
+
+                <div class="mb-4">
+                    <h4>Irrigation method</h4>
+                    <label class="form-label fw-semibold"></label>
+                    <div id="irrigationMethods" class="row selection-grid">
+                        <div class="col-4 col-md-2 mb-3">
+                            <div class="img-selection" data-field="irrigationType" data-value="drip"><img
+                                    src="{{ url_for('static', filename='assets/drip-irrigation.jpg') }}">
+                                <div class="img-selection-label">Drip</div>
+                            </div>
+                        </div>
+                        <div class="col-4 col-md-2 mb-3">
+                            <div class="img-selection" data-field="irrigationType" data-value="sprinkler"><img
+                                    src="{{ url_for('static', filename='assets/sprinkler-irrigation.jpg') }}">
+                                <div class="img-selection-label">Sprinkler</div>
+                            </div>
+                        </div>
+                        <div class="col-4 col-md-2 mb-3">
+                            <div class="img-selection" data-field="irrigationType" data-value="canal"><img
+                                    src="{{ url_for('static', filename='assets/canal-irrigation.jpg') }}">
+                                <div class="img-selection-label">Canal</div>
+                            </div>
+                        </div>
+                        <div class="col-4 col-md-2 mb-3">
+                            <div class="img-selection" data-field="irrigationType" data-value="borewell"><img
+                                    src="{{ url_for('static', filename='assets/borewell-irrigation.jpg') }}">
+                                <div class="img-selection-label">Borewell</div>
+                            </div>
+                        </div>
+                        <div class="col-4 col-md-2 mb-3">
+                            <div class="img-selection" data-field="irrigationType" data-value="rainfed"><img
+                                    src="{{ url_for('static', filename='assets/Rainfeed-irrigation.jpg') }}">
+                                <div class="img-selection-label">Rainfed</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-4">
+                    <h4>Number of irrigations since sowing</h4>
+                    <label class="form-label fw-semibold"></label>
+                    <div class="input-group mw-25">
+                        <input id="irrigationCount" class="form-control text-center" type="number" value="0" min="0"
+                            max="25">
+                    </div>
+                </div>
+
+                <div class="mb-4">
+                    <h4>Current soil state</h4>
+                    <label class="form-label fw-semibold"></label>
+                    <div class="option-group d-flex gap-2">
+                        <div><input type="radio" id="statusWet" name="irrigationStatus" value="toowet"><label
+                                for="statusWet">TooWet</label></div>
+                        <div><input type="radio" id="statusSlight" name="irrigationStatus" value="normal"><label
+                                for="statusSlight">Normal</label></div>
+                        <div><input type="radio" id="statusDry" name="irrigationStatus" value="dry"><label
+                                for="statusDry">Dry</label></div>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <!-- STEP 6 -->
+            <div id="step6" class="step-card">
+
+
+                <div class="mb-4">
+                    <h4>Leaf color</h4>
+                    <div class="row selection-grid">
+                        <div class="col-4 col-md-2">
+                            <div class="img-selection" data-field="leafColor" data-value="dark_green"><img
+                                    src="{{ url_for('static', filename='assets/darkgreen.jpg') }}">
+                                <div class="img-selection-label">Dark Green</div>
+                            </div>
+                        </div>
+                        <div class="col-4 col-md-2">
+                            <div class="img-selection" data-field="leafColor" data-value="green"><img
+                                    src="{{ url_for('static', filename='assets/normalgreen.webp') }}">
+                                <div class="img-selection-label">Green</div>
+                            </div>
+                        </div>
+                        <div class="col-4 col-md-2">
+                            <div class="img-selection" data-field="leafColor" data-value="yellowish"><img
+                                    src="{{ url_for('static', filename='assets/yellowleaf.webp') }}">
+                                <div class="img-selection-label">Yellowish</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="leaf-yellowish-container mb-4">
+                    <h4>Leaf Yellowish Color:</h4>
+                    <input type="range" id="leafYellowRange" min="0" max="100" value="0">
+
+                    <div id="leafPercentBox" class="leaf-percent-box">
+                        0%
+                    </div>
+                </div>
+
+
+                <div class="mb-4">
+                    <h4>Leaf spots</h4>
+                    <div class="row selection-grid">
+                        <div class="col-4 col-md-2">
+                            <div class="img-selection" data-field="spots" data-value="0">
+                                <img src="{{ url_for('static', filename='assets/nospots.png') }}" alt="No Spots">
+                                <div class="img-selection-label">0%</div>
+                            </div>
+                        </div>
+
+                        <div class="col-4 col-md-2">
+                            <div class="img-selection" data-field="spots" data-value="25">
+                                <img src="{{ url_for('static', filename='assets/fewspots.png') }}" alt="Few Spots">
+                                <div class="img-selection-label">20%</div>
+                            </div>
+                        </div>
+
+                        <div class="col-4 col-md-2">
+                            <div class="img-selection" data-field="spots" data-value="50">
+                                <img src="{{ url_for('static', filename='assets/modspots.png') }}" alt="Moderate">
+                                <div class="img-selection-label">40%</div>
+                            </div>
+                        </div>
+
+                        <div class="col-4 col-md-2">
+                            <div class="img-selection" data-field="spots" data-value="75">
+                                <img src="{{ url_for('static', filename='assets/highspots.png') }}" alt="High">
+                                <div class="img-selection-label">70%</div>
+                            </div>
+                        </div>
+
+                        <div class="col-4 col-md-2">
+                            <div class="img-selection" data-field="spots" data-value="100">
+                                <img src="{{ url_for('static', filename='assets/severespots.png') }}" alt="Severe">
+                                <div class="img-selection-label">90%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="mb-4">
+                    <h4>Pest Incidence</h4>
+                    <div class="row selection-grid">
+                        <div class="col-4 col-md-2">
+                            <div class="img-selection" data-field="pests" data-value="no"><img
+                                    src="{{ url_for('static', filename='assets/nospots.png') }}">
+                                <div class="img-selection-label">No Damage</div>
+                            </div>
+                        </div>
+                        <div class="col-4 col-md-2">
+                            <div class="img-selection" data-field="pests" data-value="low"><img
+                                    src="{{ url_for('static', filename='assets/low-pest.jpg') }}">
+                                <div class="img-selection-label">
+                                    Low
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4 col-md-2">
+                            <div class="img-selection" data-field="pests" data-value="moderate"><img
+                                    src="{{ url_for('static', filename='assets/moderate-pest.jpg') }}">
+                                <div class="img-selection-label">Moderate</div>
+                            </div>
+                        </div>
+                        <div class="col-4 col-md-2">
+                            <div class="img-selection" data-field="pests" data-value="high"><img
+                                    src="{{ url_for('static', filename='assets/high-pest.jpg') }}">
+                                <div class="img-selection-label">
+                                    High
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4 col-md-2">
+                            <div class="img-selection" data-field="pests" data-value="severe"><img
+                                    src="{{ url_for('static', filename='assets/severe-pest.jpg') }}">
+                                <div class="img-selection-label">Severe</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <!-- STEP 7 -->
+            <div id="step7" class="step-card">
+
+
+                <div class="mb-4">
+
+                    <label class="form-label fw-semibold">Did you use any fertilizer in last 15 days?</label>
+                    <div class="d-flex gap-3 align-items-center">
+                        <div><input type="radio" id="fertYes" name="usedFertilizer" value="Yes"><label
+                                for="fertYes">Yes</label>
+                        </div>
+                        <div><input type="radio" id="fertNo" name="usedFertilizer" value="No" checked><label
+                                for="fertNo">No</label></div>
+                    </div>
+
+                    <div id="fertilizerDetails" class="mt-3 d-none">
+                        <div class="mb-2">
+                            <label class="form-label">Which fertilizer?</label>
+                            <select id="fertilizerType" class="form-select">
+                                <option value="">Select</option>
+                                <option>Urea</option>
+                                <option>DAP</option>
+                                <option>MOP</option>
+                                <option>NPK</option>
+                                <option>Organic Manure</option>
+                                <option>complex</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="form-label">Quantity used (kg/ha)</label>
+                            <div class="d-flex align-items-center gap-3">
+                                <input id="fertQtyRange" type="range" min="0" max="200" value="0"
+                                    class="form-range w-50">
+                                <div id="fertQtyBox" class="p-2 rounded text-dark fw-bold"
+                                    style="background:#e9f5ea; width:70px; text-align:center">0</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-4">
+                    <label class="form-label fw-semibold">Did you use any pesticide in last 15 days?</label>
+                    <div class="d-flex gap-3 align-items-center">
+                        <div><input type="radio" id="pestYes" name="usedPesticide" value="Yes"><label
+                                for="pestYes">Yes</label>
+                        </div>
+                        <div><input type="radio" id="pestNo" name="usedPesticide" value="No" checked><label
+                                for="pestNo">No</label></div>
+                    </div>
+                    <div id="pesticideDetails" class="mt-3 d-none">
+                        <div class="mb-2">
+                            <label class="form-label">Which pesticide?</label>
+                            <select id="pesticideType" class="form-select">
+                                <option value="">Select</option>
+                                <option>bio_pesticide_neem</option>
+                                <option>broad_spectrum_insecticide</option>
+                                <option>aphid_control</option>
+                                <option>thrips_control</option>
+                                <option>stem_borer_control</option>
+                                <option>none</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="form-label">Quantity used (ml/ha)</label>
+                            <div class="d-flex align-items-center gap-3">
+                                <input id="pestQtyRange" type="range" min="0" max="1000" value="0"
+                                    class="form-range w-50">
+                                <div id="pestQtyBox" class="p-2 rounded text-dark fw-bold"
+                                    style="background:#e9f5ea; width:80px; text-align:center">0</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-4">
+                    <label class="form-label fw-semibold">Did you use any fungicide in last 30 days?</label>
+                    <div class="d-flex gap-3 align-items-center">
+                        <div><input type="radio" id="fungYes" name="usedFungicide" value="Yes"><label
+                                for="fungYes">Yes</label>
+                        </div>
+                        <div><input type="radio" id="fungNo" name="usedFungicide" value="No" checked><label
+                                for="fungNo">No</label></div>
+                    </div>
+                    <div id="fungicideDetails" class="mt-3 d-none">
+                        <label class="form-label">No. of sprays</label>
+                        <div class="input-group mw-25">
+                            <input id="fungSprays" class="form-control text-center" type="number" value="0" min="0"
+                                max="50">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    <!-- FOOTER NAV -->
+    <div class="d-flex justify-content-between mt-4">
+      <button id="prevStepBtn" class="btn btn-light" style="display:none">
+        « Previous
+      </button>
+
+      <button id="getRecommendationBtn" class="btn btn-success d-none">
+        Get Recommendations
+      </button>
+    </div>
+
+  </div>
+</div>
