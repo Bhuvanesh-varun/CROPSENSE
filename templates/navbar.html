@@ -44,7 +44,7 @@
 
       {% if current_user and current_user.get("quota") %}
       <span class="badge bg-success me-2">
-        {{ current_user.quota.total - current_user.quota.used }} runs left
+        {{ (current_user.quota.total | int) - (current_user.quota.used | int) }} runs left
       </span>
       {% endif %}
 

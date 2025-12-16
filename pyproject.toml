@@ -1,0 +1,8 @@
+[project]
+name = "cropsense"
+version = "1.0.0"
+description = "CropSense AI – Smart Crop Health & Soil Intelligence"
+requires-python = ">=3.11,<3.12"
+
+[tool.setuptools]
+packages = []

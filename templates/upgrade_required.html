@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+{% set hide_navbar = True %}
+{% set hide_footer = True %}
+
+{% block content %}
+
+<div class="upgrade-overlay">
+
+  <div class="upgrade-card">
+
+    <div class="upgrade-icon">🔒</div>
+
+    <h3 class="fw-bold mb-2">Premium Feature</h3>
+
+    <p class="text-muted mb-4">
+      <b>{{ feature }}</b> is available only for subscribed users.
+      Upgrade your plan to unlock full access.
+    </p>
+
+    <div class="upgrade-actions">
+      <a href="{{ url_for('plans') }}" class="btn btn-success px-4">
+        Upgrade Now
+      </a>
+
+      <a href="{{ url_for('recommendations') }}" class="btn btn-outline-secondary px-4">
+        Back to AI
+      </a>
+    </div>
+
+    <p class="small text-muted mt-4">
+      Current plan: <b>{{ plan|capitalize }}</b>
+    </p>
+
+  </div>
+
+</div>
+
+<style>
+.upgrade-overlay{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:linear-gradient(135deg,#f0fdf4,#ecfeff);
+}
+
+.upgrade-card{
+  background:#fff;
+  padding:40px;
+  max-width:420px;
+  width:100%;
+  border-radius:18px;
+  box-shadow:0 30px 80px rgba(0,0,0,.15);
+  text-align:center;
+}
+
+.upgrade-icon{
+  font-size:48px;
+  margin-bottom:15px;
+}
+
+.upgrade-actions{
+  display:flex;
+  gap:15px;
+  justify-content:center;
+}
+</style>
+
+{% endblock %}

@@ -27,12 +27,14 @@ import firebase_admin
 from firebase_admin import credentials, firestore, auth as firebase_auth
 
 
+
 def generate_simple_user_id(uid):
     return "USR-" + uid[:5].upper()
 
 def safe_json(obj):
     import json
     return json.loads(json.dumps(obj, default=str))
+
 
 
 
@@ -70,12 +72,14 @@ CORS(app, supports_credentials=True)
 SERVICE_ACCOUNT_PATH = os.path.join(os.getcwd(), "cropsense-firebase-adminsdk.json")
 
 if not os.path.exists(SERVICE_ACCOUNT_PATH):
-    raise FileNotFoundError("❌ Missing serviceAccountKey.json in project root!")
+    raise FileNotFoundError("❌ Missing cropsense-firebase-adminsdk.json in project root!")
 
 cred = credentials.Certificate(SERVICE_ACCOUNT_PATH)
 firebase_admin.initialize_app(cred)
 
 db = firestore.client()
+
+
 
 @app.context_processor
 def inject_user():
@@ -84,7 +88,19 @@ def inject_user():
         doc = db.collection("users").document(session["user_id"]).get()
         if doc.exists:
             user = doc.to_dict()
+
+            # 🔒 HARD TYPE SAFETY FOR QUOTA
+            quota = user.get("quota")
+            if quota:
+                try:
+                    quota["total"] = int(quota.get("total", 0))
+                    quota["used"] = int(quota.get("used", 0))
+                except Exception:
+                    quota["total"] = 0
+                    quota["used"] = 0
+
     return dict(current_user=user)
+
 
 
 
@@ -110,7 +126,12 @@ PLANS = {
 # ADMIN LOGIN CREDENTIALS
 # ---------------------------------------------------
 ADMIN_EMAIL = "admin@cropsense.com"
-ADMIN_PASSWORD = "Admin@123"
+ADMIN_PASSWORD = "admin@cropsense@123"
+
+
+def admin_required():
+    if session.get("role") != "admin":
+        return redirect(url_for("index"))
 
 # ---------------------------------------------------
 # ADMIN + OLD DB LOGIN (Used only by admin)
@@ -793,6 +814,7 @@ def plans():
     return render_template("plans.html", user=user)
 
 
+
 # ---------------------------------------------------------
 # Persist recommendation when user navigates away & comes back
 # ---------------------------------------------------------
@@ -813,115 +835,50 @@ def last_recommendation():
 IST = timezone(timedelta(hours=5, minutes=30))
 
 
+
 # ---------------------------------------------------
 # ADMIN DASHBOARD
 # ---------------------------------------------------
 @app.route("/admin/dashboard")
 def admin_dashboard():
-    if session.get("role") != "admin":
-        return redirect(url_for("index"))
-
-    view = request.args.get("view", "users")
+    guard = admin_required()
+    if guard:
+        return guard
 
     users = []
-    logs = []
-    free_users, basic_users, standard_users, premium_users = [], [], [], []
+    free_users, paid_users = [], []
+    total_predictions = 0
 
-    # -------------------- USERS --------------------
-    if view == "users":
+    for doc in db.collection("users").stream():
+        d = doc.to_dict()
+        user = {
+            "id": doc.id,
+            "name": d.get("name", "—"),
+            "email": d.get("email", "—"),
+            "role": d.get("role", "user"),
+            "plan": d.get("plan", "free")
+        }
+        users.append(user)
+
+        if user["plan"] == "free":
+            free_users.append(user)
+        else:
+            paid_users.append(user)
+
+        # count predictions
         try:
-            for doc in db.collection("users").stream():
-                d = doc.to_dict()
-                users.append({
-                    "id": doc.id,
-                    "name": d.get("name"),
-                    "email": d.get("email"),
-                    "role": d.get("role", "user")
-                })
-        except Exception as e:
-            print("🔥 Error loading users:", e)
-
-    # -------------------- LOGS --------------------
-    if view == "logs":
-        try:
-            # Admin logs
-            for doc in db.collection("admin_logs") \
-                .order_by("timestamp", direction=firestore.Query.DESCENDING) \
-                .stream():
-
-                d = doc.to_dict()
-                dt, epoch = ts_to_dt_and_epoch(d.get("timestamp"))
-
-                logs.append({
-                    "user_id": "ADMIN",
-                    "email": ADMIN_EMAIL,
-                    "event": d.get("event", "admin login"),
-                    "timestamp": dt.strftime("%d %b %Y, %I:%M %p") if dt else "N/A",
-                    "raw_epoch": epoch
-                })
-
-            # User login logs
-            for user in db.collection("users").stream():
-                uid = user.id
-                email = user.to_dict().get("email")
-
-                for log in db.collection("users").document(uid) \
-                    .collection("login_logs") \
-                    .order_by("timestamp", direction=firestore.Query.DESCENDING) \
-                    .stream():
-
-                    ld = log.to_dict()
-                    dt, epoch = ts_to_dt_and_epoch(ld.get("timestamp"))
-
-                    logs.append({
-                        "user_id": uid,
-                        "email": email,
-                        "event": ld.get("event", "login"),
-                        "timestamp": dt.strftime("%d %b %Y, %I:%M %p") if dt else "N/A",
-                        "raw_epoch": epoch
-                    })
-
-            logs.sort(key=lambda x: x["raw_epoch"], reverse=True)
-
-        except Exception as e:
-            print("🔥 Error loading logs:", e)
-
-    # -------------------- SUBSCRIBERS --------------------
-    if view == "subscribers":
-        try:
-            for doc in db.collection("users").stream():
-                d = doc.to_dict()
-                sub = d.get("subscription", {})
-                plan = sub.get("plan", "none")
-
-                entry = {
-                    "uid": doc.id,
-                    "name": d.get("name"),
-                    "email": d.get("email"),
-                    "date": sub.get("date")
-                }
-
-                if plan == "none":
-                    free_users.append(entry)
-                elif plan == "basic":
-                    basic_users.append(entry)
-                elif plan == "standard":
-                    standard_users.append(entry)
-                elif plan == "premium":
-                    premium_users.append(entry)
-
-        except Exception as e:
-            print("🔥 Error loading subscribers:", e)
+            preds = db.collection("users").document(doc.id)\
+                     .collection("predictions").stream()
+            total_predictions += len(list(preds))
+        except:
+            pass
 
     return render_template(
-        "admindashboard.html",
-        view=view,
+        "admin_dashboard.html",
         users=users,
-        logs=logs,
         free_users=free_users,
-        basic_users=basic_users,
-        standard_users=standard_users,
-        premium_users=premium_users
+        paid_users=paid_users,
+        total_predictions=total_predictions
     )
 
 
@@ -930,11 +887,25 @@ def admin_dashboard():
 # ---------------------------------------------------
 @app.route("/admin/user_history/<user_id>")
 def admin_user_history(user_id):
-    if session.get("role") != "admin":
-        return redirect(url_for("index"))
+    guard = admin_required()
+    if guard:
+        return guard
 
+    user_doc = db.collection("users").document(user_id).get()
+    if not user_doc.exists:
+        flash("User not found", "danger")
+        return redirect(url_for("admin_dashboard"))
+
+    user = user_doc.to_dict()
     history = get_user_history(user_id)
-    return render_template("user_history.html", history=history, is_admin=True)
+
+    return render_template(
+        "user_history.html",
+        history=history,
+        is_admin=True,
+        user=user
+    )
+
 
 
 # ---------------------------------------------------
@@ -942,8 +913,9 @@ def admin_user_history(user_id):
 # ---------------------------------------------------
 @app.route("/admin/toggle_admin/<user_id>", methods=["POST"])
 def admin_toggle_admin(user_id):
-    if session.get("role") != "admin":
-        return redirect(url_for("index"))
+    guard = admin_required()
+    if guard:
+        return guard
 
     try:
         ref = db.collection("users").document(user_id)
@@ -976,8 +948,9 @@ def admin_toggle_admin(user_id):
 # ---------------------------------------------------
 @app.route("/admin/delete/<user_id>", methods=["POST"])
 def admin_delete_user(user_id):
-    if session.get("role") != "admin":
-        return redirect(url_for("index"))
+    guard = admin_required()
+    if guard:
+        return guard
 
     if user_id == session.get("user_id"):
         flash("You cannot delete yourself.", "danger")
@@ -1092,9 +1065,17 @@ def session_login():
                 "email": email
             })
 
+        redirect_url = (
+            url_for("admin_dashboard")
+            if session.get("role") == "admin"
+            else url_for("recommendations", login="success")
+        )
+
         return jsonify({
             "ok": True,
-            "redirect": url_for("recommendations", login="success")})
+            "redirect": redirect_url
+        })
+
 
     except Exception as e:
         print("🔥 Session login error:", e)
@@ -1118,8 +1099,28 @@ def my_history():
     if "user_id" not in session:
         return redirect(url_for("index"))
 
+    user_doc = db.collection("users").document(session["user_id"]).get()
+    if not user_doc.exists:
+        return redirect(url_for("index"))
+
+    user = user_doc.to_dict()
+    plan = user.get("plan", "free")
+
+    # 🚫 Block free & single users completely
+    if plan in ["free", "single"]:
+        return render_template(
+            "upgrade_required.html",
+            feature="History Access",
+            plan=plan
+        )
+
     history = get_user_history(session["user_id"])
-    return render_template("user_history.html", history=history, is_admin=False)
+    return render_template(
+        "user_history.html",
+        history=history,
+        is_admin=False
+    )
+
 
 
 @app.route("/prediction/<prediction_id>")
