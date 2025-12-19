@@ -70,38 +70,38 @@ CORS(app, supports_credentials=True)
 # ---------------------------------------------------
 # FIREBASE SETUP
 # ---------------------------------------------------
-SERVICE_ACCOUNT_PATH = os.path.join(os.getcwd(), "cropsense-firebase-adminsdk.json")
+# SERVICE_ACCOUNT_PATH = os.path.join(os.getcwd(), "cropsense-firebase-adminsdk.json")
 
-if not os.path.exists(SERVICE_ACCOUNT_PATH):
-    raise FileNotFoundError("❌ Missing cropsense-firebase-adminsdk.json in project root!")
+# if not os.path.exists(SERVICE_ACCOUNT_PATH):
+#     raise FileNotFoundError("❌ Missing cropsense-firebase-adminsdk.json in project root!")
 
-cred = credentials.Certificate(SERVICE_ACCOUNT_PATH)
-firebase_admin.initialize_app(cred)
-
-
-
-# def init_firebase():
-#     firebase_json = os.getenv("FIREBASE_SERVICE_ACCOUNT_JSON")
-
-#     if not firebase_json:
-#         raise RuntimeError("❌ FIREBASE_SERVICE_ACCOUNT_JSON env variable not set")
-
-#     try:
-#         service_account_info = json.loads(firebase_json)
-#     except json.JSONDecodeError as e:
-#         raise RuntimeError("❌ Invalid Firebase service account JSON") from e
-
-#     # Fix private key newlines (important for env vars)
-#     if "private_key" in service_account_info:
-#         service_account_info["private_key"] = service_account_info["private_key"].replace("\\n", "\n")
-
-#     if not firebase_admin._apps:
-#         cred = credentials.Certificate(service_account_info)
-#         firebase_admin.initialize_app(cred)
+# cred = credentials.Certificate(SERVICE_ACCOUNT_PATH)
+# firebase_admin.initialize_app(cred)
 
 
-# # 🔥 CALL THIS ON APP STARTUP
-# init_firebase()
+
+def init_firebase():
+    firebase_json = os.getenv("FIREBASE_SERVICE_ACCOUNT_JSON")
+
+    if not firebase_json:
+        raise RuntimeError("❌ FIREBASE_SERVICE_ACCOUNT_JSON env variable not set")
+
+    try:
+        service_account_info = json.loads(firebase_json)
+    except json.JSONDecodeError as e:
+        raise RuntimeError("❌ Invalid Firebase service account JSON") from e
+
+    # Fix private key newlines (important for env vars)
+    if "private_key" in service_account_info:
+        service_account_info["private_key"] = service_account_info["private_key"].replace("\\n", "\n")
+
+    if not firebase_admin._apps:
+        cred = credentials.Certificate(service_account_info)
+        firebase_admin.initialize_app(cred)
+
+
+# 🔥 CALL THIS ON APP STARTUP
+init_firebase()
 
 db = firestore.client()
 
