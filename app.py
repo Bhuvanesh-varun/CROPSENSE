@@ -440,7 +440,7 @@ def get_recommendation():
         phi_value = float(phi_model.predict(sample_df)[0])
         sample_df["PHI"] = phi_value
 
-        sample_df.to_csv("input_full.csv", index=False)  # for debugging
+        # sample_df.to_csv("input_full.csv", index=False)  # for debugging
 
         # -----------------------------
         # Generate treatment plan
